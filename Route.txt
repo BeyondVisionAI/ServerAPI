@@ -1,0 +1,19 @@
+setStatut
+newProcessAction
+stopProcessAction
+finishedProcessAction
+textToSpeech
+getVoices
+
+GenerationVideo (id projet) (verif des audios + generation de l'audio, megre de l'audio et la vidéo, upload la vidéo ds le s3)
+clotureProjet
+
+voir pour modifier un audio
+(savoir la duré d'un audio, et pouvoir modifier la vitesse)
+
+encription securité audio
+
+200 Ok
+404 not found
+400 bad request
+500 erreur serveur

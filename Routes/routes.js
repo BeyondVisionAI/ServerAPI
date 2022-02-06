@@ -1,5 +1,7 @@
 module.exports = function(app) {
-    const test = require("./Test.js");
+  const aiHandler = require("./AI.js");
+  const voiceHandler = require("./Voice.js");
 
-    test(app);
-  }
+  aiHandler(app);
+  voiceHandler(app);
+}

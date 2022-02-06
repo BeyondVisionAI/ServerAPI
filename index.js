@@ -1,10 +1,21 @@
 const express = require("express");
-var routes = require('./Routes/routes');
-
+const bodyParser = require('body-parser');
+const AWS = require('aws-sdk');
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+AWS.config.setPromisesDependency();
+AWS.config.update({
+  accessKeyId: process.env.SECRET_KEY_ID_AWS,
+  secretAccessKey: process.env.SECRET_KEY_ACCES_AWS,
+  region: process.env.REGION_AWS
+});
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -16,8 +27,31 @@ app.use((req, res, next) => {
   });
 });
 
+var routes = require('./Routes/routes');
+
 routes(app);
 
-const port = process.env.PORT || 8084;
+// var url = process.env.DB_CONN_STRING;
+
+// if (process.env.MONGO_STR) {
+//   await mongoose.connect(
+//     process.env.DB_CONN_STRING,
+//     {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     }
+//   )
+//     .then(() => {
+//       console.log("Connected to mongo db")
+//     })
+//     .catch(err => {
+//       console.error("Unable to connect to mongo db", err)
+//     });
+// } else {
+//   console.log("Missing enviroment variable : DB_CONN_STRING");
+//   process.exit(84);
+// }
+
+const port = process.env.PORT || 8080;
 app.listen(port);
-console.log("Server started");
+console.log("Server started on PORT : " + port);
