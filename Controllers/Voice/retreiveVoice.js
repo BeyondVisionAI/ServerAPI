@@ -1,6 +1,7 @@
 const { voices } = require("../../datas/config");
 const AWS = require('aws-sdk');
 const Fs = require('fs');
+const { uid } = require('uid')
 
 const Polly = new AWS.Polly({
     signatureVersion: 'v4',
@@ -9,12 +10,9 @@ const Polly = new AWS.Polly({
 
 exports.retreiveVoice = async function (req, response) {
     console.log("Retreive Voice :", req.body);
-    console.log(process.env.SECRET_KEY_ID_AWS, process.env.SECRET_KEY_ACCES_AWS, process.env.REGION_AWS);
-    response.statusCode = 200;
 
     if (!req.body.voiceID || !req.body.text || !req.body.format) {
-        response.statusCode = 400;
-        response.send("Some trouble with the Retreive the Voice");
+        response.send({ statusCode: 400, statut: "Some trouble with the Retreive the Voice", uid: null });
         return
     }
 
@@ -25,6 +23,7 @@ exports.retreiveVoice = async function (req, response) {
         'OutputFormat': req.body.format,
         'VoiceId': voiceID
     }
+    const audioId = uid(10);
 
     await Polly.synthesizeSpeech(params, (err, data) => {
         if (err) {
@@ -33,12 +32,12 @@ exports.retreiveVoice = async function (req, response) {
             if (data.AudioStream instanceof Buffer) {
 
                 // TODO Changer le fait d'ecrire un fichier et l'enregistrer sur la bdd
-                Fs.writeFile("./speech.mp3", data.AudioStream, function (err) {
+                Fs.writeFile(`./${audioId}.mp3`, data.AudioStream, function (err) {
                     if (err) {
                         return console.log("Error writing:", err);
                     } else {
-                        console.log("The file was saved!");
-                        response.send("You successfully Retreive the Voice");
+                        console.log("The file was saved!", audioId);
+                        response.send({ statusCode: 200, statut: "You successfully Retreive the Voice", uid: audioId });
                     }
                 });
             }
