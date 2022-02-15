@@ -10,10 +10,19 @@ var AWS = require('aws-sdk');
         });
 
         var s3 = new AWS.S3();
-        const data = (await (s3.getObject({
+        const params = {
             Bucket: "finished-product",
-            Key: "TESTAAAAAA"
-        }).promise())).Body;
+            Key: `TESTAAAAAA/${filename}.mp3`, // File name you want to save as in S3
+            Body: fileContent
+        };
+
+        // Uploading files to the bucket
+        s3.upload(params, function (err, data) {
+            if (err) {
+                throw err;
+            }
+            console.log(`File uploaded successfully. ${data.Location}`);
+        });
 
         console.log(data);
         debugger;

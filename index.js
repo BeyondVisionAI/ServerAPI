@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const AWS = require('aws-sdk');
 const app = express();
@@ -31,27 +32,6 @@ var routes = require('./Routes/routes');
 
 routes(app);
 
-// var url = process.env.DB_CONN_STRING;
-
-// if (process.env.MONGO_STR) {
-//   await mongoose.connect(
-//     process.env.DB_CONN_STRING,
-//     {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     }
-//   )
-//     .then(() => {
-//       console.log("Connected to mongo db")
-//     })
-//     .catch(err => {
-//       console.error("Unable to connect to mongo db", err)
-//     });
-// } else {
-//   console.log("Missing enviroment variable : DB_CONN_STRING");
-//   process.exit(84);
-// }
-
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8082;
 app.listen(port);
 console.log("Server started on PORT : " + port);

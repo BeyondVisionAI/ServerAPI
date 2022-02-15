@@ -2,6 +2,14 @@
 const AWS = require('aws-sdk')
 const Fs = require('fs')
 
+// Secret id, etc
+AWS.config.setPromisesDependency();
+AWS.config.update({
+    accessKeyId: process.env.SECRET_KEY_ID_AWS,
+    secretAccessKey: process.env.SECRET_KEY_ACCES_AWS,
+    region: process.env.REGION_AWS
+});
+
 // Create an Polly client
 const Polly = new AWS.Polly({
     signatureVersion: 'v4',
@@ -9,9 +17,9 @@ const Polly = new AWS.Polly({
 })
 
 let params = {
-    'Text': 'Hi, my name is @anaptfox.',
+    'Text': 'Salut, ceci est un test.',
     'OutputFormat': 'mp3',
-    'VoiceId': 'Kimberly'
+    'VoiceId': 'Lea'
 }
 
 Polly.synthesizeSpeech(params, (err, data) => {

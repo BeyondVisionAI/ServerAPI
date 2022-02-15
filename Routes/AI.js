@@ -1,20 +1,21 @@
 module.exports = function (app) {
     const AIRoot = '/AI/';
-    const newProcess = require('../Controllers/AI/NewProcess.js');
-    const endProcess = require('../Controllers/AI/EndProcess.js');
-    const setStatus = require('../Controllers/AI/SetStatus.js');
+    const newProcessAction = require('../Controllers/AI/NewProcessAction.js');
+    const stopProcessAction = require('../Controllers/AI/StopProcessAction.js');
+    const finishedProcessAction = require('../Controllers/AI/FinishedProcessAction.js');
+
 
     console.log("Listen root AI : ");
 
-    app.route(`${AIRoot}NewProcess`)
-        .post(function (req, res) { newProcess.newProcess(req, res) });
-    console.log(`- ${AIRoot}NewProcess`);
+    app.route(`${AIRoot}NewProcessAction`)
+        .post(newProcessAction.NewProcessAction);
+    console.log(`- ${AIRoot}NewProcessAction`);
 
-    app.route(`${AIRoot}EndProcess`)
-        .post(function (req, res) { endProcess.endProcess(req, res) });
-    console.log(`- ${AIRoot}EndProcess`);
+    app.route(`${AIRoot}StopProcessAction`)
+        .post(stopProcessAction.stopProcessAction);
+    console.log(`- ${AIRoot}StopProcessAction`);
 
-    app.route(`${AIRoot}SetStatus`)
-        .post(function (req, res) { setStatus.setStatus(req, res) });
-    console.log(`- ${AIRoot}SetStatus`);
+    app.route(`${AIRoot}FinishedProcessAction`)
+        .post(finishedProcessAction.finishedProcessAction);
+    console.log(`- ${AIRoot}finishedProcess`);
 }
