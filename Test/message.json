@@ -1,0 +1,2715 @@
+{
+    "0": "fps : 30.0",
+    "1": "Preparing action recognition ...",
+    "2": "Preparing action recognition ...",
+    "3": "Preparing action recognition ...",
+    "4": "Preparing action recognition ...",
+    "5": "Preparing action recognition ...",
+    "6": "Preparing action recognition ...",
+    "7": "Preparing action recognition ...",
+    "8": "Preparing action recognition ...",
+    "9": "Preparing action recognition ...",
+    "10": "Preparing action recognition ...",
+    "11": "Preparing action recognition ...",
+    "12": "Preparing action recognition ...",
+    "13": "Preparing action recognition ...",
+    "14": "Preparing action recognition ...",
+    "15": "Preparing action recognition ...",
+    "16": "Preparing action recognition ...",
+    "17": "Preparing action recognition ...",
+    "18": "Preparing action recognition ...",
+    "19": "Preparing action recognition ...",
+    "20": "Preparing action recognition ...",
+    "21": "Preparing action recognition ...",
+    "22": "Preparing action recognition ...",
+    "23": "Preparing action recognition ...",
+    "24": "Preparing action recognition ...",
+    "25": {
+        "1": "brushing hair: 19.62",
+        "2": "fixing hair: 14.03",
+        "3": "braiding hair: 13.18",
+        "4": "massaging back: 12.2",
+        "5": "massaging person's head: 11.59"
+    },
+    "26": {
+        "1": "brushing hair: 19.62",
+        "2": "fixing hair: 14.03",
+        "3": "braiding hair: 13.18",
+        "4": "massaging back: 12.2",
+        "5": "massaging person's head: 11.59"
+    },
+    "27": {
+        "1": "brushing hair: 19.62",
+        "2": "fixing hair: 14.03",
+        "3": "braiding hair: 13.18",
+        "4": "massaging back: 12.2",
+        "5": "massaging person's head: 11.59"
+    },
+    "28": {
+        "1": "brushing hair: 19.56",
+        "2": "fixing hair: 14.12",
+        "3": "braiding hair: 13.39",
+        "4": "massaging back: 12.32",
+        "5": "massaging person's head: 11.71"
+    },
+    "29": {
+        "1": "brushing hair: 19.56",
+        "2": "fixing hair: 14.12",
+        "3": "braiding hair: 13.39",
+        "4": "massaging back: 12.32",
+        "5": "massaging person's head: 11.71"
+    },
+    "30": {
+        "1": "brushing hair: 19.56",
+        "2": "fixing hair: 14.12",
+        "3": "braiding hair: 13.39",
+        "4": "massaging back: 12.32",
+        "5": "massaging person's head: 11.71"
+    },
+    "31": {
+        "1": "brushing hair: 19.6",
+        "2": "fixing hair: 14.21",
+        "3": "braiding hair: 13.63",
+        "4": "massaging back: 12.36",
+        "5": "massaging person's head: 11.8"
+    },
+    "32": {
+        "1": "brushing hair: 19.6",
+        "2": "fixing hair: 14.21",
+        "3": "braiding hair: 13.63",
+        "4": "massaging back: 12.36",
+        "5": "massaging person's head: 11.8"
+    },
+    "33": {
+        "1": "brushing hair: 19.6",
+        "2": "fixing hair: 14.21",
+        "3": "braiding hair: 13.63",
+        "4": "massaging back: 12.36",
+        "5": "massaging person's head: 11.8"
+    },
+    "34": {
+        "1": "brushing hair: 19.69",
+        "2": "fixing hair: 14.32",
+        "3": "braiding hair: 13.87",
+        "4": "massaging back: 12.3",
+        "5": "massaging person's head: 11.86"
+    },
+    "35": {
+        "1": "brushing hair: 19.69",
+        "2": "fixing hair: 14.32",
+        "3": "braiding hair: 13.87",
+        "4": "massaging back: 12.3",
+        "5": "massaging person's head: 11.86"
+    },
+    "36": {
+        "1": "brushing hair: 19.69",
+        "2": "fixing hair: 14.32",
+        "3": "braiding hair: 13.87",
+        "4": "massaging back: 12.3",
+        "5": "massaging person's head: 11.86"
+    },
+    "37": {
+        "1": "brushing hair: 19.64",
+        "2": "fixing hair: 14.27",
+        "3": "braiding hair: 13.91",
+        "4": "massaging back: 12.16",
+        "5": "massaging person's head: 11.75"
+    },
+    "38": {
+        "1": "brushing hair: 19.64",
+        "2": "fixing hair: 14.27",
+        "3": "braiding hair: 13.91",
+        "4": "massaging back: 12.16",
+        "5": "massaging person's head: 11.75"
+    },
+    "39": {
+        "1": "brushing hair: 19.64",
+        "2": "fixing hair: 14.27",
+        "3": "braiding hair: 13.91",
+        "4": "massaging back: 12.16",
+        "5": "massaging person's head: 11.75"
+    },
+    "40": {
+        "1": "brushing hair: 19.59",
+        "2": "fixing hair: 14.25",
+        "3": "braiding hair: 14.04",
+        "4": "massaging back: 12.07",
+        "5": "massaging person's head: 11.64"
+    },
+    "41": {
+        "1": "brushing hair: 19.59",
+        "2": "fixing hair: 14.25",
+        "3": "braiding hair: 14.04",
+        "4": "massaging back: 12.07",
+        "5": "massaging person's head: 11.64"
+    },
+    "42": {
+        "1": "brushing hair: 19.59",
+        "2": "fixing hair: 14.25",
+        "3": "braiding hair: 14.04",
+        "4": "massaging back: 12.07",
+        "5": "massaging person's head: 11.64"
+    },
+    "43": {
+        "1": "brushing hair: 19.33",
+        "2": "fixing hair: 14.15",
+        "3": "braiding hair: 14.14",
+        "4": "massaging back: 11.93",
+        "5": "curling hair: 11.49"
+    },
+    "44": {
+        "1": "brushing hair: 19.33",
+        "2": "fixing hair: 14.15",
+        "3": "braiding hair: 14.14",
+        "4": "massaging back: 11.93",
+        "5": "curling hair: 11.49"
+    },
+    "45": {
+        "1": "brushing hair: 19.33",
+        "2": "fixing hair: 14.15",
+        "3": "braiding hair: 14.14",
+        "4": "massaging back: 11.93",
+        "5": "curling hair: 11.49"
+    },
+    "46": {
+        "1": "brushing hair: 19.03",
+        "2": "braiding hair: 14.12",
+        "3": "fixing hair: 13.98",
+        "4": "massaging back: 11.78",
+        "5": "curling hair: 11.56"
+    },
+    "47": {
+        "1": "brushing hair: 19.03",
+        "2": "braiding hair: 14.12",
+        "3": "fixing hair: 13.98",
+        "4": "massaging back: 11.78",
+        "5": "curling hair: 11.56"
+    },
+    "48": {
+        "1": "brushing hair: 19.03",
+        "2": "braiding hair: 14.12",
+        "3": "fixing hair: 13.98",
+        "4": "massaging back: 11.78",
+        "5": "curling hair: 11.56"
+    },
+    "49": {
+        "1": "brushing hair: 18.72",
+        "2": "braiding hair: 14.04",
+        "3": "fixing hair: 13.78",
+        "4": "massaging back: 11.62",
+        "5": "curling hair: 11.58"
+    },
+    "50": {
+        "1": "brushing hair: 18.72",
+        "2": "braiding hair: 14.04",
+        "3": "fixing hair: 13.78",
+        "4": "massaging back: 11.62",
+        "5": "curling hair: 11.58"
+    },
+    "51": {
+        "1": "brushing hair: 18.72",
+        "2": "braiding hair: 14.04",
+        "3": "fixing hair: 13.78",
+        "4": "massaging back: 11.62",
+        "5": "curling hair: 11.58"
+    },
+    "52": {
+        "1": "brushing hair: 18.23",
+        "2": "braiding hair: 13.95",
+        "3": "fixing hair: 13.54",
+        "4": "curling hair: 11.5",
+        "5": "massaging back: 11.49"
+    },
+    "53": {
+        "1": "brushing hair: 18.23",
+        "2": "braiding hair: 13.95",
+        "3": "fixing hair: 13.54",
+        "4": "curling hair: 11.5",
+        "5": "massaging back: 11.49"
+    },
+    "54": {
+        "1": "brushing hair: 18.23",
+        "2": "braiding hair: 13.95",
+        "3": "fixing hair: 13.54",
+        "4": "curling hair: 11.5",
+        "5": "massaging back: 11.49"
+    },
+    "55": {
+        "1": "brushing hair: 17.85",
+        "2": "braiding hair: 13.9",
+        "3": "fixing hair: 13.39",
+        "4": "curling hair: 11.54",
+        "5": "massaging back: 11.33"
+    },
+    "56": {
+        "1": "brushing hair: 17.85",
+        "2": "braiding hair: 13.9",
+        "3": "fixing hair: 13.39",
+        "4": "curling hair: 11.54",
+        "5": "massaging back: 11.33"
+    },
+    "57": {
+        "1": "brushing hair: 17.85",
+        "2": "braiding hair: 13.9",
+        "3": "fixing hair: 13.39",
+        "4": "curling hair: 11.54",
+        "5": "massaging back: 11.33"
+    },
+    "58": {
+        "1": "brushing hair: 17.48",
+        "2": "braiding hair: 13.88",
+        "3": "fixing hair: 13.25",
+        "4": "curling hair: 11.56",
+        "5": "massaging back: 11.21"
+    },
+    "59": {
+        "1": "brushing hair: 17.48",
+        "2": "braiding hair: 13.88",
+        "3": "fixing hair: 13.25",
+        "4": "curling hair: 11.56",
+        "5": "massaging back: 11.21"
+    },
+    "60": {
+        "1": "brushing hair: 17.48",
+        "2": "braiding hair: 13.88",
+        "3": "fixing hair: 13.25",
+        "4": "curling hair: 11.56",
+        "5": "massaging back: 11.21"
+    },
+    "61": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 13.72",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 11.33",
+        "5": "stretching arm: 11.29"
+    },
+    "62": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 13.72",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 11.33",
+        "5": "stretching arm: 11.29"
+    },
+    "63": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 13.72",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 11.33",
+        "5": "stretching arm: 11.29"
+    },
+    "64": {
+        "1": "brushing hair: 16.64",
+        "2": "braiding hair: 13.66",
+        "3": "fixing hair: 12.78",
+        "4": "stretching arm: 11.59",
+        "5": "massaging back: 11.22"
+    },
+    "65": {
+        "1": "brushing hair: 16.64",
+        "2": "braiding hair: 13.66",
+        "3": "fixing hair: 12.78",
+        "4": "stretching arm: 11.59",
+        "5": "massaging back: 11.22"
+    },
+    "66": {
+        "1": "brushing hair: 16.64",
+        "2": "braiding hair: 13.66",
+        "3": "fixing hair: 12.78",
+        "4": "stretching arm: 11.59",
+        "5": "massaging back: 11.22"
+    },
+    "67": {
+        "1": "brushing hair: 16.24",
+        "2": "braiding hair: 13.5",
+        "3": "fixing hair: 12.52",
+        "4": "stretching arm: 11.79",
+        "5": "massaging back: 11.23"
+    },
+    "68": {
+        "1": "brushing hair: 16.24",
+        "2": "braiding hair: 13.5",
+        "3": "fixing hair: 12.52",
+        "4": "stretching arm: 11.79",
+        "5": "massaging back: 11.23"
+    },
+    "69": {
+        "1": "brushing hair: 16.24",
+        "2": "braiding hair: 13.5",
+        "3": "fixing hair: 12.52",
+        "4": "stretching arm: 11.79",
+        "5": "massaging back: 11.23"
+    },
+    "70": {
+        "1": "brushing hair: 15.96",
+        "2": "braiding hair: 13.39",
+        "3": "fixing hair: 12.35",
+        "4": "stretching arm: 11.92",
+        "5": "massaging back: 11.02"
+    },
+    "71": {
+        "1": "brushing hair: 15.96",
+        "2": "braiding hair: 13.39",
+        "3": "fixing hair: 12.35",
+        "4": "stretching arm: 11.92",
+        "5": "massaging back: 11.02"
+    },
+    "72": {
+        "1": "brushing hair: 15.96",
+        "2": "braiding hair: 13.39",
+        "3": "fixing hair: 12.35",
+        "4": "stretching arm: 11.92",
+        "5": "massaging back: 11.02"
+    },
+    "73": {
+        "1": "brushing hair: 15.66",
+        "2": "braiding hair: 13.27",
+        "3": "fixing hair: 12.21",
+        "4": "stretching arm: 12.01",
+        "5": "carrying baby: 10.84"
+    },
+    "74": {
+        "1": "brushing hair: 15.66",
+        "2": "braiding hair: 13.27",
+        "3": "fixing hair: 12.21",
+        "4": "stretching arm: 12.01",
+        "5": "carrying baby: 10.84"
+    },
+    "75": {
+        "1": "brushing hair: 15.66",
+        "2": "braiding hair: 13.27",
+        "3": "fixing hair: 12.21",
+        "4": "stretching arm: 12.01",
+        "5": "carrying baby: 10.84"
+    },
+    "76": {
+        "1": "brushing hair: 15.33",
+        "2": "braiding hair: 13.27",
+        "3": "stretching arm: 12.21",
+        "4": "fixing hair: 12.19",
+        "5": "yoga: 10.92"
+    },
+    "77": {
+        "1": "brushing hair: 15.33",
+        "2": "braiding hair: 13.27",
+        "3": "stretching arm: 12.21",
+        "4": "fixing hair: 12.19",
+        "5": "yoga: 10.92"
+    },
+    "78": {
+        "1": "brushing hair: 15.33",
+        "2": "braiding hair: 13.27",
+        "3": "stretching arm: 12.21",
+        "4": "fixing hair: 12.19",
+        "5": "yoga: 10.92"
+    },
+    "79": {
+        "1": "brushing hair: 15.01",
+        "2": "braiding hair: 13.34",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.22",
+        "5": "yoga: 10.92"
+    },
+    "80": {
+        "1": "brushing hair: 15.01",
+        "2": "braiding hair: 13.34",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.22",
+        "5": "yoga: 10.92"
+    },
+    "81": {
+        "1": "brushing hair: 15.01",
+        "2": "braiding hair: 13.34",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.22",
+        "5": "yoga: 10.92"
+    },
+    "82": {
+        "1": "brushing hair: 14.72",
+        "2": "braiding hair: 13.29",
+        "3": "stretching arm: 12.36",
+        "4": "fixing hair: 12.18",
+        "5": "yoga: 10.82"
+    },
+    "83": {
+        "1": "brushing hair: 14.72",
+        "2": "braiding hair: 13.29",
+        "3": "stretching arm: 12.36",
+        "4": "fixing hair: 12.18",
+        "5": "yoga: 10.82"
+    },
+    "84": {
+        "1": "brushing hair: 14.72",
+        "2": "braiding hair: 13.29",
+        "3": "stretching arm: 12.36",
+        "4": "fixing hair: 12.18",
+        "5": "yoga: 10.82"
+    },
+    "85": {
+        "1": "brushing hair: 14.57",
+        "2": "braiding hair: 13.46",
+        "3": "stretching arm: 12.41",
+        "4": "fixing hair: 12.25",
+        "5": "curling hair: 10.95"
+    },
+    "86": {
+        "1": "brushing hair: 14.57",
+        "2": "braiding hair: 13.46",
+        "3": "stretching arm: 12.41",
+        "4": "fixing hair: 12.25",
+        "5": "curling hair: 10.95"
+    },
+    "87": {
+        "1": "brushing hair: 14.57",
+        "2": "braiding hair: 13.46",
+        "3": "stretching arm: 12.41",
+        "4": "fixing hair: 12.25",
+        "5": "curling hair: 10.95"
+    },
+    "88": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 13.57",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.3",
+        "5": "curling hair: 11.04"
+    },
+    "89": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 13.57",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.3",
+        "5": "curling hair: 11.04"
+    },
+    "90": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 13.57",
+        "3": "stretching arm: 12.31",
+        "4": "fixing hair: 12.3",
+        "5": "curling hair: 11.04"
+    },
+    "91": {
+        "1": "brushing hair: 14.4",
+        "2": "braiding hair: 13.87",
+        "3": "fixing hair: 12.48",
+        "4": "stretching arm: 12.27",
+        "5": "curling hair: 11.27"
+    },
+    "92": {
+        "1": "brushing hair: 14.4",
+        "2": "braiding hair: 13.87",
+        "3": "fixing hair: 12.48",
+        "4": "stretching arm: 12.27",
+        "5": "curling hair: 11.27"
+    },
+    "93": {
+        "1": "brushing hair: 14.4",
+        "2": "braiding hair: 13.87",
+        "3": "fixing hair: 12.48",
+        "4": "stretching arm: 12.27",
+        "5": "curling hair: 11.27"
+    },
+    "94": {
+        "1": "brushing hair: 14.42",
+        "2": "braiding hair: 14.11",
+        "3": "fixing hair: 12.63",
+        "4": "stretching arm: 12.25",
+        "5": "curling hair: 11.46"
+    },
+    "95": {
+        "1": "brushing hair: 14.42",
+        "2": "braiding hair: 14.11",
+        "3": "fixing hair: 12.63",
+        "4": "stretching arm: 12.25",
+        "5": "curling hair: 11.46"
+    },
+    "96": {
+        "1": "brushing hair: 14.42",
+        "2": "braiding hair: 14.11",
+        "3": "fixing hair: 12.63",
+        "4": "stretching arm: 12.25",
+        "5": "curling hair: 11.46"
+    },
+    "97": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 14.17",
+        "3": "fixing hair: 12.65",
+        "4": "stretching arm: 12.07",
+        "5": "curling hair: 11.55"
+    },
+    "98": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 14.17",
+        "3": "fixing hair: 12.65",
+        "4": "stretching arm: 12.07",
+        "5": "curling hair: 11.55"
+    },
+    "99": {
+        "1": "brushing hair: 14.45",
+        "2": "braiding hair: 14.17",
+        "3": "fixing hair: 12.65",
+        "4": "stretching arm: 12.07",
+        "5": "curling hair: 11.55"
+    },
+    "100": {
+        "1": "brushing hair: 14.47",
+        "2": "braiding hair: 14.1",
+        "3": "fixing hair: 12.55",
+        "4": "stretching arm: 11.87",
+        "5": "curling hair: 11.55"
+    },
+    "101": {
+        "1": "brushing hair: 14.47",
+        "2": "braiding hair: 14.1",
+        "3": "fixing hair: 12.55",
+        "4": "stretching arm: 11.87",
+        "5": "curling hair: 11.55"
+    },
+    "102": {
+        "1": "brushing hair: 14.47",
+        "2": "braiding hair: 14.1",
+        "3": "fixing hair: 12.55",
+        "4": "stretching arm: 11.87",
+        "5": "curling hair: 11.55"
+    },
+    "103": {
+        "1": "brushing hair: 14.66",
+        "2": "braiding hair: 14.16",
+        "3": "fixing hair: 12.58",
+        "4": "stretching arm: 11.73",
+        "5": "curling hair: 11.72"
+    },
+    "104": {
+        "1": "brushing hair: 14.66",
+        "2": "braiding hair: 14.16",
+        "3": "fixing hair: 12.58",
+        "4": "stretching arm: 11.73",
+        "5": "curling hair: 11.72"
+    },
+    "105": {
+        "1": "brushing hair: 14.66",
+        "2": "braiding hair: 14.16",
+        "3": "fixing hair: 12.58",
+        "4": "stretching arm: 11.73",
+        "5": "curling hair: 11.72"
+    },
+    "106": {
+        "1": "brushing hair: 14.88",
+        "2": "braiding hair: 14.27",
+        "3": "fixing hair: 12.69",
+        "4": "curling hair: 11.9",
+        "5": "stretching arm: 11.7"
+    },
+    "107": {
+        "1": "brushing hair: 14.88",
+        "2": "braiding hair: 14.27",
+        "3": "fixing hair: 12.69",
+        "4": "curling hair: 11.9",
+        "5": "stretching arm: 11.7"
+    },
+    "108": {
+        "1": "brushing hair: 14.88",
+        "2": "braiding hair: 14.27",
+        "3": "fixing hair: 12.69",
+        "4": "curling hair: 11.9",
+        "5": "stretching arm: 11.7"
+    },
+    "109": {
+        "1": "brushing hair: 14.98",
+        "2": "braiding hair: 14.34",
+        "3": "fixing hair: 12.73",
+        "4": "curling hair: 11.99",
+        "5": "stretching arm: 11.76"
+    },
+    "110": {
+        "1": "brushing hair: 14.98",
+        "2": "braiding hair: 14.34",
+        "3": "fixing hair: 12.73",
+        "4": "curling hair: 11.99",
+        "5": "stretching arm: 11.76"
+    },
+    "111": {
+        "1": "brushing hair: 14.98",
+        "2": "braiding hair: 14.34",
+        "3": "fixing hair: 12.73",
+        "4": "curling hair: 11.99",
+        "5": "stretching arm: 11.76"
+    },
+    "112": {
+        "1": "brushing hair: 15.03",
+        "2": "braiding hair: 14.45",
+        "3": "fixing hair: 12.82",
+        "4": "curling hair: 12.22",
+        "5": "stretching arm: 11.85"
+    },
+    "113": {
+        "1": "brushing hair: 15.03",
+        "2": "braiding hair: 14.45",
+        "3": "fixing hair: 12.82",
+        "4": "curling hair: 12.22",
+        "5": "stretching arm: 11.85"
+    },
+    "114": {
+        "1": "brushing hair: 15.03",
+        "2": "braiding hair: 14.45",
+        "3": "fixing hair: 12.82",
+        "4": "curling hair: 12.22",
+        "5": "stretching arm: 11.85"
+    },
+    "115": {
+        "1": "brushing hair: 15.11",
+        "2": "braiding hair: 14.49",
+        "3": "fixing hair: 12.89",
+        "4": "curling hair: 12.35",
+        "5": "stretching arm: 11.92"
+    },
+    "116": {
+        "1": "brushing hair: 15.11",
+        "2": "braiding hair: 14.49",
+        "3": "fixing hair: 12.89",
+        "4": "curling hair: 12.35",
+        "5": "stretching arm: 11.92"
+    },
+    "117": {
+        "1": "brushing hair: 15.11",
+        "2": "braiding hair: 14.49",
+        "3": "fixing hair: 12.89",
+        "4": "curling hair: 12.35",
+        "5": "stretching arm: 11.92"
+    },
+    "118": {
+        "1": "brushing hair: 15.29",
+        "2": "braiding hair: 14.51",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 12.39",
+        "5": "stretching arm: 11.97"
+    },
+    "119": {
+        "1": "brushing hair: 15.29",
+        "2": "braiding hair: 14.51",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 12.39",
+        "5": "stretching arm: 11.97"
+    },
+    "120": {
+        "1": "brushing hair: 15.29",
+        "2": "braiding hair: 14.51",
+        "3": "fixing hair: 12.98",
+        "4": "curling hair: 12.39",
+        "5": "stretching arm: 11.97"
+    },
+    "121": {
+        "1": "brushing hair: 15.47",
+        "2": "braiding hair: 14.64",
+        "3": "fixing hair: 13.13",
+        "4": "curling hair: 12.4",
+        "5": "stretching arm: 12.07"
+    },
+    "122": {
+        "1": "brushing hair: 15.47",
+        "2": "braiding hair: 14.64",
+        "3": "fixing hair: 13.13",
+        "4": "curling hair: 12.4",
+        "5": "stretching arm: 12.07"
+    },
+    "123": {
+        "1": "brushing hair: 15.47",
+        "2": "braiding hair: 14.64",
+        "3": "fixing hair: 13.13",
+        "4": "curling hair: 12.4",
+        "5": "stretching arm: 12.07"
+    },
+    "124": {
+        "1": "brushing hair: 15.54",
+        "2": "braiding hair: 14.77",
+        "3": "fixing hair: 13.2",
+        "4": "curling hair: 12.37",
+        "5": "stretching arm: 12.19"
+    },
+    "125": {
+        "1": "brushing hair: 15.54",
+        "2": "braiding hair: 14.77",
+        "3": "fixing hair: 13.2",
+        "4": "curling hair: 12.37",
+        "5": "stretching arm: 12.19"
+    },
+    "126": {
+        "1": "brushing hair: 15.54",
+        "2": "braiding hair: 14.77",
+        "3": "fixing hair: 13.2",
+        "4": "curling hair: 12.37",
+        "5": "stretching arm: 12.19"
+    },
+    "127": {
+        "1": "brushing hair: 15.73",
+        "2": "braiding hair: 14.89",
+        "3": "fixing hair: 13.31",
+        "4": "curling hair: 12.42",
+        "5": "stretching arm: 12.18"
+    },
+    "128": {
+        "1": "brushing hair: 15.73",
+        "2": "braiding hair: 14.89",
+        "3": "fixing hair: 13.31",
+        "4": "curling hair: 12.42",
+        "5": "stretching arm: 12.18"
+    },
+    "129": {
+        "1": "brushing hair: 15.73",
+        "2": "braiding hair: 14.89",
+        "3": "fixing hair: 13.31",
+        "4": "curling hair: 12.42",
+        "5": "stretching arm: 12.18"
+    },
+    "130": {
+        "1": "brushing hair: 15.93",
+        "2": "braiding hair: 15.05",
+        "3": "fixing hair: 13.42",
+        "4": "curling hair: 12.36",
+        "5": "stretching arm: 12.11"
+    },
+    "131": {
+        "1": "brushing hair: 15.93",
+        "2": "braiding hair: 15.05",
+        "3": "fixing hair: 13.42",
+        "4": "curling hair: 12.36",
+        "5": "stretching arm: 12.11"
+    },
+    "132": {
+        "1": "brushing hair: 15.93",
+        "2": "braiding hair: 15.05",
+        "3": "fixing hair: 13.42",
+        "4": "curling hair: 12.36",
+        "5": "stretching arm: 12.11"
+    },
+    "133": {
+        "1": "brushing hair: 16.16",
+        "2": "braiding hair: 15.25",
+        "3": "fixing hair: 13.57",
+        "4": "curling hair: 12.33",
+        "5": "stretching arm: 11.97"
+    },
+    "134": {
+        "1": "brushing hair: 16.16",
+        "2": "braiding hair: 15.25",
+        "3": "fixing hair: 13.57",
+        "4": "curling hair: 12.33",
+        "5": "stretching arm: 11.97"
+    },
+    "135": {
+        "1": "brushing hair: 16.16",
+        "2": "braiding hair: 15.25",
+        "3": "fixing hair: 13.57",
+        "4": "curling hair: 12.33",
+        "5": "stretching arm: 11.97"
+    },
+    "136": {
+        "1": "brushing hair: 16.43",
+        "2": "braiding hair: 15.5",
+        "3": "fixing hair: 13.8",
+        "4": "curling hair: 12.51",
+        "5": "stretching arm: 11.79"
+    },
+    "137": {
+        "1": "brushing hair: 16.43",
+        "2": "braiding hair: 15.5",
+        "3": "fixing hair: 13.8",
+        "4": "curling hair: 12.51",
+        "5": "stretching arm: 11.79"
+    },
+    "138": {
+        "1": "brushing hair: 16.43",
+        "2": "braiding hair: 15.5",
+        "3": "fixing hair: 13.8",
+        "4": "curling hair: 12.51",
+        "5": "stretching arm: 11.79"
+    },
+    "139": {
+        "1": "brushing hair: 16.6",
+        "2": "braiding hair: 15.6",
+        "3": "fixing hair: 13.95",
+        "4": "curling hair: 12.65",
+        "5": "massaging person's head: 11.77"
+    },
+    "140": {
+        "1": "brushing hair: 16.6",
+        "2": "braiding hair: 15.6",
+        "3": "fixing hair: 13.95",
+        "4": "curling hair: 12.65",
+        "5": "massaging person's head: 11.77"
+    },
+    "141": {
+        "1": "brushing hair: 16.6",
+        "2": "braiding hair: 15.6",
+        "3": "fixing hair: 13.95",
+        "4": "curling hair: 12.65",
+        "5": "massaging person's head: 11.77"
+    },
+    "142": {
+        "1": "brushing hair: 16.96",
+        "2": "braiding hair: 15.87",
+        "3": "fixing hair: 14.24",
+        "4": "curling hair: 12.96",
+        "5": "massaging person's head: 11.92"
+    },
+    "143": {
+        "1": "brushing hair: 16.96",
+        "2": "braiding hair: 15.87",
+        "3": "fixing hair: 14.24",
+        "4": "curling hair: 12.96",
+        "5": "massaging person's head: 11.92"
+    },
+    "144": {
+        "1": "brushing hair: 16.96",
+        "2": "braiding hair: 15.87",
+        "3": "fixing hair: 14.24",
+        "4": "curling hair: 12.96",
+        "5": "massaging person's head: 11.92"
+    },
+    "145": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.19",
+        "3": "fixing hair: 14.53",
+        "4": "curling hair: 13.27",
+        "5": "massaging person's head: 12.2"
+    },
+    "146": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.19",
+        "3": "fixing hair: 14.53",
+        "4": "curling hair: 13.27",
+        "5": "massaging person's head: 12.2"
+    },
+    "147": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.19",
+        "3": "fixing hair: 14.53",
+        "4": "curling hair: 13.27",
+        "5": "massaging person's head: 12.2"
+    },
+    "148": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.16",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.04"
+    },
+    "149": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.16",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.04"
+    },
+    "150": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.16",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.04"
+    },
+    "151": {
+        "1": "brushing hair: 17.32",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 11.66"
+    },
+    "152": {
+        "1": "brushing hair: 17.32",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 11.66"
+    },
+    "153": {
+        "1": "brushing hair: 17.32",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 11.66"
+    },
+    "154": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.2",
+        "4": "curling hair: 13.26",
+        "5": "stretching arm: 11.37"
+    },
+    "155": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.2",
+        "4": "curling hair: 13.26",
+        "5": "stretching arm: 11.37"
+    },
+    "156": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.06",
+        "3": "fixing hair: 14.2",
+        "4": "curling hair: 13.26",
+        "5": "stretching arm: 11.37"
+    },
+    "157": {
+        "1": "brushing hair: 17.73",
+        "2": "braiding hair: 16.2",
+        "3": "fixing hair: 14.25",
+        "4": "curling hair: 13.39",
+        "5": "stretching arm: 11.24"
+    },
+    "158": {
+        "1": "brushing hair: 17.73",
+        "2": "braiding hair: 16.2",
+        "3": "fixing hair: 14.25",
+        "4": "curling hair: 13.39",
+        "5": "stretching arm: 11.24"
+    },
+    "159": {
+        "1": "brushing hair: 17.73",
+        "2": "braiding hair: 16.2",
+        "3": "fixing hair: 14.25",
+        "4": "curling hair: 13.39",
+        "5": "stretching arm: 11.24"
+    },
+    "160": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.33",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.41",
+        "5": "stretching arm: 11.21"
+    },
+    "161": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.33",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.41",
+        "5": "stretching arm: 11.21"
+    },
+    "162": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.33",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.41",
+        "5": "stretching arm: 11.21"
+    },
+    "163": {
+        "1": "brushing hair: 17.76",
+        "2": "braiding hair: 16.37",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.39",
+        "5": "massaging person's head: 11.44"
+    },
+    "164": {
+        "1": "brushing hair: 17.76",
+        "2": "braiding hair: 16.37",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.39",
+        "5": "massaging person's head: 11.44"
+    },
+    "165": {
+        "1": "brushing hair: 17.76",
+        "2": "braiding hair: 16.37",
+        "3": "fixing hair: 14.31",
+        "4": "curling hair: 13.39",
+        "5": "massaging person's head: 11.44"
+    },
+    "166": {
+        "1": "brushing hair: 17.96",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.5",
+        "5": "massaging person's head: 11.55"
+    },
+    "167": {
+        "1": "brushing hair: 17.96",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.5",
+        "5": "massaging person's head: 11.55"
+    },
+    "168": {
+        "1": "brushing hair: 17.96",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.5",
+        "5": "massaging person's head: 11.55"
+    },
+    "169": {
+        "1": "brushing hair: 18.04",
+        "2": "braiding hair: 16.7",
+        "3": "fixing hair: 14.48",
+        "4": "curling hair: 13.59",
+        "5": "massaging person's head: 11.55"
+    },
+    "170": {
+        "1": "brushing hair: 18.04",
+        "2": "braiding hair: 16.7",
+        "3": "fixing hair: 14.48",
+        "4": "curling hair: 13.59",
+        "5": "massaging person's head: 11.55"
+    },
+    "171": {
+        "1": "brushing hair: 18.04",
+        "2": "braiding hair: 16.7",
+        "3": "fixing hair: 14.48",
+        "4": "curling hair: 13.59",
+        "5": "massaging person's head: 11.55"
+    },
+    "172": {
+        "1": "brushing hair: 18.13",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.6",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.61"
+    },
+    "173": {
+        "1": "brushing hair: 18.13",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.6",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.61"
+    },
+    "174": {
+        "1": "brushing hair: 18.13",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.6",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.61"
+    },
+    "175": {
+        "1": "brushing hair: 18.16",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.74",
+        "4": "curling hair: 13.97",
+        "5": "stretching arm: 11.6"
+    },
+    "176": {
+        "1": "brushing hair: 18.16",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.74",
+        "4": "curling hair: 13.97",
+        "5": "stretching arm: 11.6"
+    },
+    "177": {
+        "1": "brushing hair: 18.16",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.74",
+        "4": "curling hair: 13.97",
+        "5": "stretching arm: 11.6"
+    },
+    "178": {
+        "1": "brushing hair: 18.02",
+        "2": "braiding hair: 17.0",
+        "3": "fixing hair: 14.7",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 11.64"
+    },
+    "179": {
+        "1": "brushing hair: 18.02",
+        "2": "braiding hair: 17.0",
+        "3": "fixing hair: 14.7",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 11.64"
+    },
+    "180": {
+        "1": "brushing hair: 18.02",
+        "2": "braiding hair: 17.0",
+        "3": "fixing hair: 14.7",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 11.64"
+    },
+    "181": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.92",
+        "5": "stretching arm: 11.69"
+    },
+    "182": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.92",
+        "5": "stretching arm: 11.69"
+    },
+    "183": {
+        "1": "brushing hair: 17.82",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.92",
+        "5": "stretching arm: 11.69"
+    },
+    "184": {
+        "1": "brushing hair: 17.59",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.55",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 11.7"
+    },
+    "185": {
+        "1": "brushing hair: 17.59",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.55",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 11.7"
+    },
+    "186": {
+        "1": "brushing hair: 17.59",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.55",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 11.7"
+    },
+    "187": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.51",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.79"
+    },
+    "188": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.51",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.79"
+    },
+    "189": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 16.96",
+        "3": "fixing hair: 14.51",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.79"
+    },
+    "190": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.54",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.87"
+    },
+    "191": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.54",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.87"
+    },
+    "192": {
+        "1": "brushing hair: 17.47",
+        "2": "braiding hair: 17.02",
+        "3": "fixing hair: 14.54",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 11.87"
+    },
+    "193": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.93",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.69",
+        "5": "stretching arm: 11.9"
+    },
+    "194": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.93",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.69",
+        "5": "stretching arm: 11.9"
+    },
+    "195": {
+        "1": "brushing hair: 17.43",
+        "2": "braiding hair: 16.93",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.69",
+        "5": "stretching arm: 11.9"
+    },
+    "196": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.79",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 11.92"
+    },
+    "197": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.79",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 11.92"
+    },
+    "198": {
+        "1": "brushing hair: 17.23",
+        "2": "braiding hair: 16.79",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 11.92"
+    },
+    "199": {
+        "1": "brushing hair: 17.18",
+        "2": "braiding hair: 16.75",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.41",
+        "5": "massaging person's head: 12.03"
+    },
+    "200": {
+        "1": "brushing hair: 17.18",
+        "2": "braiding hair: 16.75",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.41",
+        "5": "massaging person's head: 12.03"
+    },
+    "201": {
+        "1": "brushing hair: 17.18",
+        "2": "braiding hair: 16.75",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.41",
+        "5": "massaging person's head: 12.03"
+    },
+    "202": {
+        "1": "brushing hair: 17.15",
+        "2": "braiding hair: 16.61",
+        "3": "fixing hair: 14.35",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.26"
+    },
+    "203": {
+        "1": "brushing hair: 17.15",
+        "2": "braiding hair: 16.61",
+        "3": "fixing hair: 14.35",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.26"
+    },
+    "204": {
+        "1": "brushing hair: 17.15",
+        "2": "braiding hair: 16.61",
+        "3": "fixing hair: 14.35",
+        "4": "curling hair: 13.23",
+        "5": "massaging person's head: 12.26"
+    },
+    "205": {
+        "1": "brushing hair: 16.99",
+        "2": "braiding hair: 16.65",
+        "3": "fixing hair: 14.41",
+        "4": "curling hair: 13.26",
+        "5": "massaging person's head: 12.4"
+    },
+    "206": {
+        "1": "brushing hair: 16.99",
+        "2": "braiding hair: 16.65",
+        "3": "fixing hair: 14.41",
+        "4": "curling hair: 13.26",
+        "5": "massaging person's head: 12.4"
+    },
+    "207": {
+        "1": "brushing hair: 16.99",
+        "2": "braiding hair: 16.65",
+        "3": "fixing hair: 14.41",
+        "4": "curling hair: 13.26",
+        "5": "massaging person's head: 12.4"
+    },
+    "208": {
+        "1": "brushing hair: 16.93",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.52",
+        "5": "massaging person's head: 12.41"
+    },
+    "209": {
+        "1": "brushing hair: 16.93",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.52",
+        "5": "massaging person's head: 12.41"
+    },
+    "210": {
+        "1": "brushing hair: 16.93",
+        "2": "braiding hair: 16.86",
+        "3": "fixing hair: 14.63",
+        "4": "curling hair: 13.52",
+        "5": "massaging person's head: 12.41"
+    },
+    "211": {
+        "1": "brushing hair: 16.66",
+        "2": "braiding hair: 16.57",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.42",
+        "5": "stretching arm: 12.44"
+    },
+    "212": {
+        "1": "brushing hair: 16.66",
+        "2": "braiding hair: 16.57",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.42",
+        "5": "stretching arm: 12.44"
+    },
+    "213": {
+        "1": "brushing hair: 16.66",
+        "2": "braiding hair: 16.57",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.42",
+        "5": "stretching arm: 12.44"
+    },
+    "214": {
+        "1": "brushing hair: 16.67",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.39",
+        "4": "curling hair: 13.56",
+        "5": "stretching arm: 12.28"
+    },
+    "215": {
+        "1": "brushing hair: 16.67",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.39",
+        "4": "curling hair: 13.56",
+        "5": "stretching arm: 12.28"
+    },
+    "216": {
+        "1": "brushing hair: 16.67",
+        "2": "braiding hair: 16.53",
+        "3": "fixing hair: 14.39",
+        "4": "curling hair: 13.56",
+        "5": "stretching arm: 12.28"
+    },
+    "217": {
+        "1": "brushing hair: 16.5",
+        "2": "braiding hair: 16.49",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 12.06"
+    },
+    "218": {
+        "1": "brushing hair: 16.5",
+        "2": "braiding hair: 16.49",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 12.06"
+    },
+    "219": {
+        "1": "brushing hair: 16.5",
+        "2": "braiding hair: 16.49",
+        "3": "fixing hair: 14.27",
+        "4": "curling hair: 13.5",
+        "5": "stretching arm: 12.06"
+    },
+    "220": {
+        "1": "braiding hair: 16.47",
+        "2": "brushing hair: 16.19",
+        "3": "fixing hair: 14.07",
+        "4": "curling hair: 13.36",
+        "5": "stretching arm: 11.95"
+    },
+    "221": {
+        "1": "braiding hair: 16.47",
+        "2": "brushing hair: 16.19",
+        "3": "fixing hair: 14.07",
+        "4": "curling hair: 13.36",
+        "5": "stretching arm: 11.95"
+    },
+    "222": {
+        "1": "braiding hair: 16.47",
+        "2": "brushing hair: 16.19",
+        "3": "fixing hair: 14.07",
+        "4": "curling hair: 13.36",
+        "5": "stretching arm: 11.95"
+    },
+    "223": {
+        "1": "braiding hair: 16.85",
+        "2": "brushing hair: 16.27",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.64",
+        "5": "stretching arm: 12.01"
+    },
+    "224": {
+        "1": "braiding hair: 16.85",
+        "2": "brushing hair: 16.27",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.64",
+        "5": "stretching arm: 12.01"
+    },
+    "225": {
+        "1": "braiding hair: 16.85",
+        "2": "brushing hair: 16.27",
+        "3": "fixing hair: 14.37",
+        "4": "curling hair: 13.64",
+        "5": "stretching arm: 12.01"
+    },
+    "226": {
+        "1": "braiding hair: 17.15",
+        "2": "brushing hair: 16.18",
+        "3": "fixing hair: 14.45",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.04"
+    },
+    "227": {
+        "1": "braiding hair: 17.15",
+        "2": "brushing hair: 16.18",
+        "3": "fixing hair: 14.45",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.04"
+    },
+    "228": {
+        "1": "braiding hair: 17.15",
+        "2": "brushing hair: 16.18",
+        "3": "fixing hair: 14.45",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.04"
+    },
+    "229": {
+        "1": "braiding hair: 17.19",
+        "2": "brushing hair: 16.01",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.05"
+    },
+    "230": {
+        "1": "braiding hair: 17.19",
+        "2": "brushing hair: 16.01",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.05"
+    },
+    "231": {
+        "1": "braiding hair: 17.19",
+        "2": "brushing hair: 16.01",
+        "3": "fixing hair: 14.4",
+        "4": "curling hair: 13.76",
+        "5": "stretching arm: 12.05"
+    },
+    "232": {
+        "1": "braiding hair: 17.32",
+        "2": "brushing hair: 15.96",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 12.02"
+    },
+    "233": {
+        "1": "braiding hair: 17.32",
+        "2": "brushing hair: 15.96",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 12.02"
+    },
+    "234": {
+        "1": "braiding hair: 17.32",
+        "2": "brushing hair: 15.96",
+        "3": "fixing hair: 14.49",
+        "4": "curling hair: 13.98",
+        "5": "stretching arm: 12.02"
+    },
+    "235": {
+        "1": "braiding hair: 17.14",
+        "2": "brushing hair: 15.99",
+        "3": "fixing hair: 14.38",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 12.02"
+    },
+    "236": {
+        "1": "braiding hair: 17.14",
+        "2": "brushing hair: 15.99",
+        "3": "fixing hair: 14.38",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 12.02"
+    },
+    "237": {
+        "1": "braiding hair: 17.14",
+        "2": "brushing hair: 15.99",
+        "3": "fixing hair: 14.38",
+        "4": "curling hair: 13.88",
+        "5": "stretching arm: 12.02"
+    },
+    "238": {
+        "1": "braiding hair: 17.0",
+        "2": "brushing hair: 16.13",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.9"
+    },
+    "239": {
+        "1": "braiding hair: 17.0",
+        "2": "brushing hair: 16.13",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.9"
+    },
+    "240": {
+        "1": "braiding hair: 17.0",
+        "2": "brushing hair: 16.13",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.8",
+        "5": "stretching arm: 11.9"
+    },
+    "241": {
+        "1": "braiding hair: 16.61",
+        "2": "brushing hair: 16.14",
+        "3": "fixing hair: 14.12",
+        "4": "curling hair: 13.57",
+        "5": "stretching arm: 11.79"
+    },
+    "242": {
+        "1": "braiding hair: 16.61",
+        "2": "brushing hair: 16.14",
+        "3": "fixing hair: 14.12",
+        "4": "curling hair: 13.57",
+        "5": "stretching arm: 11.79"
+    },
+    "243": {
+        "1": "braiding hair: 16.61",
+        "2": "brushing hair: 16.14",
+        "3": "fixing hair: 14.12",
+        "4": "curling hair: 13.57",
+        "5": "stretching arm: 11.79"
+    },
+    "244": {
+        "1": "braiding hair: 16.37",
+        "2": "brushing hair: 16.32",
+        "3": "fixing hair: 14.1",
+        "4": "curling hair: 13.44",
+        "5": "stretching arm: 11.65"
+    },
+    "245": {
+        "1": "braiding hair: 16.37",
+        "2": "brushing hair: 16.32",
+        "3": "fixing hair: 14.1",
+        "4": "curling hair: 13.44",
+        "5": "stretching arm: 11.65"
+    },
+    "246": {
+        "1": "braiding hair: 16.37",
+        "2": "brushing hair: 16.32",
+        "3": "fixing hair: 14.1",
+        "4": "curling hair: 13.44",
+        "5": "stretching arm: 11.65"
+    },
+    "247": {
+        "1": "braiding hair: 16.6",
+        "2": "brushing hair: 16.52",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.55",
+        "5": "stretching arm: 11.64"
+    },
+    "248": {
+        "1": "braiding hair: 16.6",
+        "2": "brushing hair: 16.52",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.55",
+        "5": "stretching arm: 11.64"
+    },
+    "249": {
+        "1": "braiding hair: 16.6",
+        "2": "brushing hair: 16.52",
+        "3": "fixing hair: 14.33",
+        "4": "curling hair: 13.55",
+        "5": "stretching arm: 11.64"
+    },
+    "250": {
+        "1": "brushing hair: 16.53",
+        "2": "braiding hair: 16.41",
+        "3": "fixing hair: 14.22",
+        "4": "curling hair: 13.32",
+        "5": "massaging person's head: 11.57"
+    },
+    "251": {
+        "1": "brushing hair: 16.53",
+        "2": "braiding hair: 16.41",
+        "3": "fixing hair: 14.22",
+        "4": "curling hair: 13.32",
+        "5": "massaging person's head: 11.57"
+    },
+    "252": {
+        "1": "brushing hair: 16.53",
+        "2": "braiding hair: 16.41",
+        "3": "fixing hair: 14.22",
+        "4": "curling hair: 13.32",
+        "5": "massaging person's head: 11.57"
+    },
+    "253": {
+        "1": "brushing hair: 16.81",
+        "2": "braiding hair: 16.6",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.37",
+        "5": "massaging person's head: 11.73"
+    },
+    "254": {
+        "1": "brushing hair: 16.81",
+        "2": "braiding hair: 16.6",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.37",
+        "5": "massaging person's head: 11.73"
+    },
+    "255": {
+        "1": "brushing hair: 16.81",
+        "2": "braiding hair: 16.6",
+        "3": "fixing hair: 14.42",
+        "4": "curling hair: 13.37",
+        "5": "massaging person's head: 11.73"
+    },
+    "256": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 16.72",
+        "3": "fixing hair: 14.59",
+        "4": "curling hair: 13.45",
+        "5": "massaging person's head: 11.82"
+    },
+    "257": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 16.72",
+        "3": "fixing hair: 14.59",
+        "4": "curling hair: 13.45",
+        "5": "massaging person's head: 11.82"
+    },
+    "258": {
+        "1": "brushing hair: 17.02",
+        "2": "braiding hair: 16.72",
+        "3": "fixing hair: 14.59",
+        "4": "curling hair: 13.45",
+        "5": "massaging person's head: 11.82"
+    },
+    "259": {
+        "1": "brushing hair: 17.16",
+        "2": "braiding hair: 16.8",
+        "3": "fixing hair: 14.69",
+        "4": "curling hair: 13.46",
+        "5": "massaging person's head: 11.87"
+    },
+    "260": {
+        "1": "brushing hair: 17.16",
+        "2": "braiding hair: 16.8",
+        "3": "fixing hair: 14.69",
+        "4": "curling hair: 13.46",
+        "5": "massaging person's head: 11.87"
+    },
+    "261": {
+        "1": "brushing hair: 17.16",
+        "2": "braiding hair: 16.8",
+        "3": "fixing hair: 14.69",
+        "4": "curling hair: 13.46",
+        "5": "massaging person's head: 11.87"
+    },
+    "262": {
+        "1": "brushing hair: 17.3",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.82",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.88"
+    },
+    "263": {
+        "1": "brushing hair: 17.3",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.82",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.88"
+    },
+    "264": {
+        "1": "brushing hair: 17.3",
+        "2": "braiding hair: 16.9",
+        "3": "fixing hair: 14.82",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.88"
+    },
+    "265": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.99",
+        "3": "fixing hair: 14.88",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.82"
+    },
+    "266": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.99",
+        "3": "fixing hair: 14.88",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.82"
+    },
+    "267": {
+        "1": "brushing hair: 17.27",
+        "2": "braiding hair: 16.99",
+        "3": "fixing hair: 14.88",
+        "4": "curling hair: 13.53",
+        "5": "massaging person's head: 11.82"
+    },
+    "268": {
+        "1": "brushing hair: 17.28",
+        "2": "braiding hair: 17.21",
+        "3": "fixing hair: 15.0",
+        "4": "curling hair: 13.62",
+        "5": "massaging person's head: 11.73"
+    },
+    "269": {
+        "1": "brushing hair: 17.28",
+        "2": "braiding hair: 17.21",
+        "3": "fixing hair: 15.0",
+        "4": "curling hair: 13.62",
+        "5": "massaging person's head: 11.73"
+    },
+    "270": {
+        "1": "brushing hair: 17.28",
+        "2": "braiding hair: 17.21",
+        "3": "fixing hair: 15.0",
+        "4": "curling hair: 13.62",
+        "5": "massaging person's head: 11.73"
+    },
+    "271": {
+        "1": "braiding hair: 17.49",
+        "2": "brushing hair: 17.42",
+        "3": "fixing hair: 15.23",
+        "4": "curling hair: 13.83",
+        "5": "carrying baby: 11.73"
+    },
+    "272": {
+        "1": "braiding hair: 17.49",
+        "2": "brushing hair: 17.42",
+        "3": "fixing hair: 15.23",
+        "4": "curling hair: 13.83",
+        "5": "carrying baby: 11.73"
+    },
+    "273": {
+        "1": "braiding hair: 17.49",
+        "2": "brushing hair: 17.42",
+        "3": "fixing hair: 15.23",
+        "4": "curling hair: 13.83",
+        "5": "carrying baby: 11.73"
+    },
+    "274": {
+        "1": "braiding hair: 17.72",
+        "2": "brushing hair: 17.54",
+        "3": "fixing hair: 15.36",
+        "4": "curling hair: 14.05",
+        "5": "carrying baby: 11.84"
+    },
+    "275": {
+        "1": "braiding hair: 17.72",
+        "2": "brushing hair: 17.54",
+        "3": "fixing hair: 15.36",
+        "4": "curling hair: 14.05",
+        "5": "carrying baby: 11.84"
+    },
+    "276": {
+        "1": "braiding hair: 17.72",
+        "2": "brushing hair: 17.54",
+        "3": "fixing hair: 15.36",
+        "4": "curling hair: 14.05",
+        "5": "carrying baby: 11.84"
+    },
+    "277": {
+        "1": "braiding hair: 18.01",
+        "2": "brushing hair: 17.62",
+        "3": "fixing hair: 15.54",
+        "4": "curling hair: 14.31",
+        "5": "carrying baby: 11.77"
+    },
+    "278": {
+        "1": "braiding hair: 18.01",
+        "2": "brushing hair: 17.62",
+        "3": "fixing hair: 15.54",
+        "4": "curling hair: 14.31",
+        "5": "carrying baby: 11.77"
+    },
+    "279": {
+        "1": "braiding hair: 18.01",
+        "2": "brushing hair: 17.62",
+        "3": "fixing hair: 15.54",
+        "4": "curling hair: 14.31",
+        "5": "carrying baby: 11.77"
+    },
+    "280": {
+        "1": "braiding hair: 18.09",
+        "2": "brushing hair: 17.72",
+        "3": "fixing hair: 15.57",
+        "4": "curling hair: 14.39",
+        "5": "carrying baby: 11.71"
+    },
+    "281": {
+        "1": "braiding hair: 18.09",
+        "2": "brushing hair: 17.72",
+        "3": "fixing hair: 15.57",
+        "4": "curling hair: 14.39",
+        "5": "carrying baby: 11.71"
+    },
+    "282": {
+        "1": "braiding hair: 18.09",
+        "2": "brushing hair: 17.72",
+        "3": "fixing hair: 15.57",
+        "4": "curling hair: 14.39",
+        "5": "carrying baby: 11.71"
+    },
+    "283": {
+        "1": "braiding hair: 17.92",
+        "2": "brushing hair: 17.7",
+        "3": "fixing hair: 15.41",
+        "4": "curling hair: 14.24",
+        "5": "carrying baby: 11.68"
+    },
+    "284": {
+        "1": "braiding hair: 17.92",
+        "2": "brushing hair: 17.7",
+        "3": "fixing hair: 15.41",
+        "4": "curling hair: 14.24",
+        "5": "carrying baby: 11.68"
+    },
+    "285": {
+        "1": "braiding hair: 17.92",
+        "2": "brushing hair: 17.7",
+        "3": "fixing hair: 15.41",
+        "4": "curling hair: 14.24",
+        "5": "carrying baby: 11.68"
+    },
+    "286": {
+        "1": "braiding hair: 18.27",
+        "2": "brushing hair: 17.95",
+        "3": "fixing hair: 15.69",
+        "4": "curling hair: 14.48",
+        "5": "carrying baby: 11.65"
+    },
+    "287": {
+        "1": "braiding hair: 18.27",
+        "2": "brushing hair: 17.95",
+        "3": "fixing hair: 15.69",
+        "4": "curling hair: 14.48",
+        "5": "carrying baby: 11.65"
+    },
+    "288": {
+        "1": "braiding hair: 18.27",
+        "2": "brushing hair: 17.95",
+        "3": "fixing hair: 15.69",
+        "4": "curling hair: 14.48",
+        "5": "carrying baby: 11.65"
+    },
+    "289": {
+        "1": "braiding hair: 18.48",
+        "2": "brushing hair: 17.98",
+        "3": "fixing hair: 15.79",
+        "4": "curling hair: 14.5",
+        "5": "carrying baby: 11.64"
+    },
+    "290": {
+        "1": "braiding hair: 18.48",
+        "2": "brushing hair: 17.98",
+        "3": "fixing hair: 15.79",
+        "4": "curling hair: 14.5",
+        "5": "carrying baby: 11.64"
+    },
+    "291": {
+        "1": "braiding hair: 18.48",
+        "2": "brushing hair: 17.98",
+        "3": "fixing hair: 15.79",
+        "4": "curling hair: 14.5",
+        "5": "carrying baby: 11.64"
+    },
+    "292": {
+        "1": "braiding hair: 18.61",
+        "2": "brushing hair: 18.04",
+        "3": "fixing hair: 15.93",
+        "4": "curling hair: 14.6",
+        "5": "carrying baby: 11.6"
+    },
+    "293": {
+        "1": "braiding hair: 18.61",
+        "2": "brushing hair: 18.04",
+        "3": "fixing hair: 15.93",
+        "4": "curling hair: 14.6",
+        "5": "carrying baby: 11.6"
+    },
+    "294": {
+        "1": "braiding hair: 18.61",
+        "2": "brushing hair: 18.04",
+        "3": "fixing hair: 15.93",
+        "4": "curling hair: 14.6",
+        "5": "carrying baby: 11.6"
+    },
+    "295": {
+        "1": "braiding hair: 18.63",
+        "2": "brushing hair: 18.25",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.7",
+        "5": "dying hair: 11.64"
+    },
+    "296": {
+        "1": "braiding hair: 18.63",
+        "2": "brushing hair: 18.25",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.7",
+        "5": "dying hair: 11.64"
+    },
+    "297": {
+        "1": "braiding hair: 18.63",
+        "2": "brushing hair: 18.25",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.7",
+        "5": "dying hair: 11.64"
+    },
+    "298": {
+        "1": "braiding hair: 18.57",
+        "2": "brushing hair: 18.39",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.69",
+        "5": "dying hair: 11.71"
+    },
+    "299": {
+        "1": "braiding hair: 18.57",
+        "2": "brushing hair: 18.39",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.69",
+        "5": "dying hair: 11.71"
+    },
+    "300": {
+        "1": "braiding hair: 18.57",
+        "2": "brushing hair: 18.39",
+        "3": "fixing hair: 16.06",
+        "4": "curling hair: 14.69",
+        "5": "dying hair: 11.71"
+    },
+    "301": {
+        "1": "brushing hair: 18.62",
+        "2": "braiding hair: 18.56",
+        "3": "fixing hair: 16.18",
+        "4": "curling hair: 14.71",
+        "5": "dying hair: 11.82"
+    },
+    "302": {
+        "1": "brushing hair: 18.62",
+        "2": "braiding hair: 18.56",
+        "3": "fixing hair: 16.18",
+        "4": "curling hair: 14.71",
+        "5": "dying hair: 11.82"
+    },
+    "303": {
+        "1": "brushing hair: 18.62",
+        "2": "braiding hair: 18.56",
+        "3": "fixing hair: 16.18",
+        "4": "curling hair: 14.71",
+        "5": "dying hair: 11.82"
+    },
+    "304": {
+        "1": "brushing hair: 18.87",
+        "2": "braiding hair: 18.58",
+        "3": "fixing hair: 16.33",
+        "4": "curling hair: 14.76",
+        "5": "dying hair: 11.97"
+    },
+    "305": {
+        "1": "brushing hair: 18.87",
+        "2": "braiding hair: 18.58",
+        "3": "fixing hair: 16.33",
+        "4": "curling hair: 14.76",
+        "5": "dying hair: 11.97"
+    },
+    "306": {
+        "1": "brushing hair: 18.87",
+        "2": "braiding hair: 18.58",
+        "3": "fixing hair: 16.33",
+        "4": "curling hair: 14.76",
+        "5": "dying hair: 11.97"
+    },
+    "307": {
+        "1": "brushing hair: 18.9",
+        "2": "braiding hair: 18.59",
+        "3": "fixing hair: 16.37",
+        "4": "curling hair: 14.65",
+        "5": "dying hair: 12.04"
+    },
+    "308": {
+        "1": "brushing hair: 18.9",
+        "2": "braiding hair: 18.59",
+        "3": "fixing hair: 16.37",
+        "4": "curling hair: 14.65",
+        "5": "dying hair: 12.04"
+    },
+    "309": {
+        "1": "brushing hair: 18.9",
+        "2": "braiding hair: 18.59",
+        "3": "fixing hair: 16.37",
+        "4": "curling hair: 14.65",
+        "5": "dying hair: 12.04"
+    },
+    "310": {
+        "1": "brushing hair: 18.92",
+        "2": "braiding hair: 18.71",
+        "3": "fixing hair: 16.5",
+        "4": "curling hair: 14.75",
+        "5": "dying hair: 12.23"
+    },
+    "311": {
+        "1": "brushing hair: 18.92",
+        "2": "braiding hair: 18.71",
+        "3": "fixing hair: 16.5",
+        "4": "curling hair: 14.75",
+        "5": "dying hair: 12.23"
+    },
+    "312": {
+        "1": "brushing hair: 18.92",
+        "2": "braiding hair: 18.71",
+        "3": "fixing hair: 16.5",
+        "4": "curling hair: 14.75",
+        "5": "dying hair: 12.23"
+    },
+    "313": {
+        "1": "brushing hair: 18.98",
+        "2": "braiding hair: 18.94",
+        "3": "fixing hair: 16.66",
+        "4": "curling hair: 14.95",
+        "5": "dying hair: 12.37"
+    },
+    "314": {
+        "1": "brushing hair: 18.98",
+        "2": "braiding hair: 18.94",
+        "3": "fixing hair: 16.66",
+        "4": "curling hair: 14.95",
+        "5": "dying hair: 12.37"
+    },
+    "315": {
+        "1": "brushing hair: 18.98",
+        "2": "braiding hair: 18.94",
+        "3": "fixing hair: 16.66",
+        "4": "curling hair: 14.95",
+        "5": "dying hair: 12.37"
+    },
+    "316": {
+        "1": "braiding hair: 19.26",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.87",
+        "4": "curling hair: 15.16",
+        "5": "dying hair: 12.55"
+    },
+    "317": {
+        "1": "braiding hair: 19.26",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.87",
+        "4": "curling hair: 15.16",
+        "5": "dying hair: 12.55"
+    },
+    "318": {
+        "1": "braiding hair: 19.26",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.87",
+        "4": "curling hair: 15.16",
+        "5": "dying hair: 12.55"
+    },
+    "319": {
+        "1": "braiding hair: 19.51",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.32",
+        "5": "dying hair: 12.63"
+    },
+    "320": {
+        "1": "braiding hair: 19.51",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.32",
+        "5": "dying hair: 12.63"
+    },
+    "321": {
+        "1": "braiding hair: 19.51",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.32",
+        "5": "dying hair: 12.63"
+    },
+    "322": {
+        "1": "braiding hair: 19.3",
+        "2": "brushing hair: 19.01",
+        "3": "fixing hair: 16.82",
+        "4": "curling hair: 15.19",
+        "5": "dying hair: 12.62"
+    },
+    "323": {
+        "1": "braiding hair: 19.3",
+        "2": "brushing hair: 19.01",
+        "3": "fixing hair: 16.82",
+        "4": "curling hair: 15.19",
+        "5": "dying hair: 12.62"
+    },
+    "324": {
+        "1": "braiding hair: 19.3",
+        "2": "brushing hair: 19.01",
+        "3": "fixing hair: 16.82",
+        "4": "curling hair: 15.19",
+        "5": "dying hair: 12.62"
+    },
+    "325": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.2",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.84"
+    },
+    "326": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.2",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.84"
+    },
+    "327": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.2",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.84"
+    },
+    "328": {
+        "1": "braiding hair: 19.59",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.04",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.82"
+    },
+    "329": {
+        "1": "braiding hair: 19.59",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.04",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.82"
+    },
+    "330": {
+        "1": "braiding hair: 19.59",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.04",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.82"
+    },
+    "331": {
+        "1": "braiding hair: 19.57",
+        "2": "brushing hair: 19.03",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.43",
+        "5": "dying hair: 12.82"
+    },
+    "332": {
+        "1": "braiding hair: 19.57",
+        "2": "brushing hair: 19.03",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.43",
+        "5": "dying hair: 12.82"
+    },
+    "333": {
+        "1": "braiding hair: 19.57",
+        "2": "brushing hair: 19.03",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.43",
+        "5": "dying hair: 12.82"
+    },
+    "334": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.05",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.83"
+    },
+    "335": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.05",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.83"
+    },
+    "336": {
+        "1": "braiding hair: 19.61",
+        "2": "brushing hair: 19.05",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.46",
+        "5": "dying hair: 12.83"
+    },
+    "337": {
+        "1": "braiding hair: 19.65",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.5",
+        "5": "dying hair: 12.85"
+    },
+    "338": {
+        "1": "braiding hair: 19.65",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.5",
+        "5": "dying hair: 12.85"
+    },
+    "339": {
+        "1": "braiding hair: 19.65",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.5",
+        "5": "dying hair: 12.85"
+    },
+    "340": {
+        "1": "braiding hair: 19.68",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "341": {
+        "1": "braiding hair: 19.68",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "342": {
+        "1": "braiding hair: 19.68",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.08",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "343": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.09",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "344": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.09",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "345": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.09",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.87"
+    },
+    "346": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "347": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "348": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "349": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "350": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "351": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.53",
+        "5": "dying hair: 12.88"
+    },
+    "352": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "353": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "354": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "355": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "356": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "357": {
+        "1": "braiding hair: 19.7",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.88"
+    },
+    "358": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "359": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "360": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "361": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "362": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "363": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.14",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "364": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "365": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "366": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "367": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "368": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "369": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "370": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "371": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "372": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "373": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "374": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "375": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "376": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "377": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "378": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "379": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "380": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "381": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "382": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "383": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "384": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "385": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "386": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "387": {
+        "1": "braiding hair: 19.71",
+        "2": "brushing hair: 19.13",
+        "3": "fixing hair: 17.1",
+        "4": "curling hair: 15.52",
+        "5": "dying hair: 12.89"
+    },
+    "388": {
+        "1": "braiding hair: 19.66",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.07",
+        "4": "curling hair: 15.49",
+        "5": "dying hair: 12.87"
+    },
+    "389": {
+        "1": "braiding hair: 19.66",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.07",
+        "4": "curling hair: 15.49",
+        "5": "dying hair: 12.87"
+    },
+    "390": {
+        "1": "braiding hair: 19.66",
+        "2": "brushing hair: 19.12",
+        "3": "fixing hair: 17.07",
+        "4": "curling hair: 15.49",
+        "5": "dying hair: 12.87"
+    },
+    "391": {
+        "1": "braiding hair: 19.62",
+        "2": "brushing hair: 19.11",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.47",
+        "5": "dying hair: 12.85"
+    },
+    "392": {
+        "1": "braiding hair: 19.62",
+        "2": "brushing hair: 19.11",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.47",
+        "5": "dying hair: 12.85"
+    },
+    "393": {
+        "1": "braiding hair: 19.62",
+        "2": "brushing hair: 19.11",
+        "3": "fixing hair: 17.05",
+        "4": "curling hair: 15.47",
+        "5": "dying hair: 12.85"
+    },
+    "394": {
+        "1": "braiding hair: 19.58",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.84"
+    },
+    "395": {
+        "1": "braiding hair: 19.58",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.84"
+    },
+    "396": {
+        "1": "braiding hair: 19.58",
+        "2": "brushing hair: 19.1",
+        "3": "fixing hair: 17.03",
+        "4": "curling hair: 15.44",
+        "5": "dying hair: 12.84"
+    },
+    "397": {
+        "1": "braiding hair: 19.53",
+        "2": "brushing hair: 19.09",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.41",
+        "5": "dying hair: 12.82"
+    },
+    "398": {
+        "1": "braiding hair: 19.53",
+        "2": "brushing hair: 19.09",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.41",
+        "5": "dying hair: 12.82"
+    },
+    "399": {
+        "1": "braiding hair: 19.53",
+        "2": "brushing hair: 19.09",
+        "3": "fixing hair: 17.0",
+        "4": "curling hair: 15.41",
+        "5": "dying hair: 12.82"
+    },
+    "400": {
+        "1": "braiding hair: 19.49",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.39",
+        "5": "dying hair: 12.8"
+    },
+    "401": {
+        "1": "braiding hair: 19.49",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.39",
+        "5": "dying hair: 12.8"
+    },
+    "402": {
+        "1": "braiding hair: 19.49",
+        "2": "brushing hair: 19.08",
+        "3": "fixing hair: 16.98",
+        "4": "curling hair: 15.39",
+        "5": "dying hair: 12.8"
+    },
+    "403": {
+        "1": "braiding hair: 19.45",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.95",
+        "4": "curling hair: 15.36",
+        "5": "dying hair: 12.78"
+    },
+    "404": {
+        "1": "braiding hair: 19.45",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.95",
+        "4": "curling hair: 15.36",
+        "5": "dying hair: 12.78"
+    },
+    "405": {
+        "1": "braiding hair: 19.45",
+        "2": "brushing hair: 19.07",
+        "3": "fixing hair: 16.95",
+        "4": "curling hair: 15.36",
+        "5": "dying hair: 12.78"
+    },
+    "406": {
+        "1": "braiding hair: 19.4",
+        "2": "brushing hair: 19.06",
+        "3": "fixing hair: 16.93",
+        "4": "curling hair: 15.33",
+        "5": "dying hair: 12.77"
+    },
+    "407": {
+        "1": "braiding hair: 19.4",
+        "2": "brushing hair: 19.06",
+        "3": "fixing hair: 16.93",
+        "4": "curling hair: 15.33",
+        "5": "dying hair: 12.77"
+    },
+    "408": {
+        "1": "braiding hair: 19.4",
+        "2": "brushing hair: 19.06",
+        "3": "fixing hair: 16.93",
+        "4": "curling hair: 15.33",
+        "5": "dying hair: 12.77"
+    }
+}

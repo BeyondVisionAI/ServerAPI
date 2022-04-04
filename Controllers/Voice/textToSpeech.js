@@ -1,12 +1,13 @@
 const { voices } = require("../../datas/config");
 const AWS = require('aws-sdk');
-const Fs = require('fs');
 const { uid } = require('uid');
+const Mp3Duration = require('../datas/Mp3Duration');
 
 const Polly = new AWS.Polly({
     signatureVersion: 'v4',
     region: process.env.REGION_AWS
 })
+const mp3Duration = new Mp3Duration();
 
 exports.textToSpeech = async function (req, res) {
     console.log("Text To Speech :", req.body);
@@ -52,9 +53,16 @@ exports.textToSpeech = async function (req, res) {
         }
     });
 
+    var duration = mp3Duration.getDuration(file, (err, duration) => {
+        if (err)
+            console.log(err);
+        else
+            return duration
+    });
+
     if (status.err) {
         return (res.status(400).send({ err: status.err }))
     } else {
-        return (res.status(200).send({ audioID: audioId }));
+        return (res.status(200).send({ audioID: audioId, audioDuration: duration }));
     }
 };

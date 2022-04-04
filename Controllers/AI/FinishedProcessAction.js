@@ -1,4 +1,27 @@
+const { exec } = require("child_process");
+var Fs = require('fs');
+
 exports.finishedProcessAction = function (req, res) {
-    console.log("New Process : " + req.body);
-    return (res.status(200).send("You successfully the Finished Process Action"));
+    var returnCode = 200;
+    var returnMessage = "You successfully finished the process";
+    try {
+        var jsonString = Fs.readFileSync(processIdPath);
+        var processId = JSON.parse(jsonString);
+
+        for (let it in processId.process) {
+            if (processId.process[it].projectId = req.body.projectId) {
+                console.log(`Kill ${processId.process[it].pid}`);
+                exec(`Kill ${processId.process[it]}`);
+                processId.process.splice(it, 1);
+                break;
+            }
+        }
+
+        jsonString = JSON.stringify(processId);
+        Fs.writeFileSync(processIdPath, jsonString);
+    } catch (err) {
+        returnCode = 400;
+        returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
+    }
+    return (res.status(returnCode).send(returnMessage));
 }
