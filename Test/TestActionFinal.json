@@ -1,0 +1,39 @@
+{
+    "fps": 30,
+    "script": [
+        {
+            "actionName": "brushing hair",
+            "percent": 98.10000000000001,
+            "itStart": 0,
+            "nbIT": 195,
+            "startTime": 0,
+            "endTime": 6.5
+        },
+        {
+            "actionName": "braiding hair",
+            "percent": 18.01,
+            "itStart": 252,
+            "nbIT": 24,
+            "startTime": 8.4,
+            "endTime": 9.2
+        },
+        {
+            "actionName": "brushing hair",
+            "percent": 18.62,
+            "itStart": 276,
+            "nbIT": 15,
+            "startTime": 9.2,
+            "endTime": 9.7
+        },
+        {
+            "actionName": "braiding hair",
+            "percent": 19.26,
+            "itStart": 291,
+            "nbIT": 93,
+            "startTime": 9.7,
+            "endTime": 12.8
+        }
+    ],
+    "nbStep": 383,
+    "videoTime": 12.766666666666666
+}

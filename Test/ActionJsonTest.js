@@ -1,7 +1,7 @@
-const { Errors } = require("../../datas/Errors.js");
+const { Errors } = require('../datas/Errors.js');
 var Fs = require('fs');
 
-var processIdPath = "../../datas/processId.json"
+// var processIdPath = "../datas/processId.json"
 
 function addNewActionToJson(actionsToSend, actionName, actionPercent, keyIt) {
     actionsToSend.script.push({
@@ -85,62 +85,37 @@ function parseAndGenerateJson(actionsReceive) {
     return actionsToSend;
 }
 
-/**
- * finished Process Action of a project
- * @param { Request } req { params: projectId, body: { jsonPath } }
- * @param { Response } res
- * @returns { response to send }
- */
-exports.finishedProcessAction = function (req, res) {
-    var returnCode = 200;
-    var returnMessage = "You successfully finished the process";
-    const urlSetScript = `https://localhost/projects/${req.body.projectId}/setScript`;
-    try {
-        if (req.body.jsonPath === undefined || req.params.projectId === undefined) {
-            throw (Error.BAD_REQUEST_MISSING_INFO);
-        }
+// var projectId = '';
+var jsonPath = 'TestAction.json';
 
-        var jsonString = Fs.readFileSync('../MMAction2/' + jsonPath);
-        var actionsReceive = JSON.parse(jsonString);
+try {
+    // if (jsonPath === undefined || projectId === undefined) {
+    //     throw Error.BAD_REQUEST_MISSING_INFO;
+    // }
 
-        // Genreate all the action with the start step and the number step 
-        var jsonToSend = parseAndGenerateJson(actionsReceive);
+    var jsonString = Fs.readFileSync(jsonPath);
+    var actionsReceive = JSON.parse(jsonString);
+    var jsonToSend = parseAndGenerateJson(actionsReceive);
 
-        // jsonToSend: { 
-        //      script:[
-        //          0:{"actionName", "percent", "itStart", "nbIT", startTime, endTime},
-        //          etc...
-        //      ],
-        //      fps: 30.0,
-        //      nbStep: Xxx,
-        //      videoTime: Xxx.xx
-        // }
+    // jsonToSend: {
+    //      script:[
+    //          0:{"actionName", "percent", "itStart", "nbIT", startTime, endTime},
+    //          etc...
+    //      ],
+    //      fps: 30.0,
+    //      nbStep: Xxx,
+    //      videoTime: Xxx.xx
+    // }
 
-
-        // Add Step to TimeStemp
-        for (let key in jsonToSend.script) {
-            jsonToSend.script[key].startTime = (1 / jsonToSend['fps']) * jsonToSend.script[key].itStart;
-            jsonToSend.script[key].endTime = (1 / jsonToSend['fps']) * (jsonToSend.script[key].itStart + jsonToSend.script[key].nbIT);
-        }
-
-        var jsonString = Fs.readFileSync(processIdPath);
-        var processId = JSON.parse(jsonString);
-
-        for (let it in processId.process) {
-            if (processId.process[it].projectId = req.body.projectId) {
-                processId.process.splice(it, 1);
-                break;
-            }
-        }
-
-        jsonString = JSON.stringify(processId);
-        Fs.writeFileSync(processIdPath, jsonString);
-        returnMessage = 'The "finished process Action" successfully catch !';
-        jsonString = JSON.stringify(jsonToSend);
-        await fetch(urlSetScript, { method: 'post', body: jsonString });
-    } catch (err) {
-        returnCode = 400;
-        returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
+    // Add Step to TimeStemp
+    for (let key in jsonToSend.script) {
+        jsonToSend.script[key].startTime = (1 / jsonToSend['fps']) * jsonToSend.script[key].itStart;
+        jsonToSend.script[key].endTime = (1 / jsonToSend['fps']) * (jsonToSend.script[key].itStart + jsonToSend.script[key].nbIT);
     }
-    return (res.status(returnCode).send(returnMessage));
+
+    jsonString = JSON.stringify(jsonToSend);
+    Fs.writeFileSync('TestActionFinal.json', jsonString);
+    console.log("Finished")
+} catch (err) {
+    console.log(err);
 }

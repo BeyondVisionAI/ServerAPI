@@ -1,7 +1,14 @@
+const { Errors } = require("../../datas/Errors.js");
+var Fs = require('fs');
+var processIdPath = "../../datas/processId.json"
+
 exports.stopProcessAction = function (req, res) {
     var returnCode = 200;
     var returnMessage = "You successfully stop the process";
     try {
+        if (req.body.projectId === undefined) {
+            throw Errors.BAD_REQUEST_BAD_INFOS;
+        }
         var jsonString = Fs.readFileSync(processIdPath);
         var processId = JSON.parse(jsonString);
 

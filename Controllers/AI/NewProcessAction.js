@@ -1,15 +1,22 @@
 const { exec } = require("child_process");
 var Fs = require('fs');
 const { Errors } = require("../../datas/Errors.js");
+var { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
 
 const processIdPath = "../../datas/processId.json"
 
 exports.newProcessAction = function (req, res) {
+
     var returnCode = 200;
     var returnMessage = "You successfully Generate The Video";
-    try {
-        // TODO récupe les videos a partir du S3
 
+    try {
+        let s3FilePathAudio = `${req.body.audioID}.mp3`
+        let audioObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathAudio, true);
+
+        if (audioObj.Code === 84) {
+            throw Error.ERROR_S3_DOWNLOAD;
+        }
         const pathToVideo = `Files/${req.body.projectId}.mp4`;
         const pathToJson = `../MMAction2/${req.body.projectId}.json`;
 
