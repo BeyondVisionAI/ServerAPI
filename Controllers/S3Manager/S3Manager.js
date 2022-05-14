@@ -91,3 +91,26 @@ exports.createFolder = async function (bucketnName, keyName) {
         return ({ code: 84, err: err });
     }
 };
+
+exports.deleteFile = async function (bucketName, keyname) {
+    try {
+        var s3 = new AWS.S3();
+
+        const params = {
+            Bucket: bucketnName,
+            Key: keyName
+        };
+
+        s3.deleteObject(params, function (err, data) {
+            if (err) {
+                console.log('Error S3', Errors.ERROR_S3_DELETE);
+                return ({ code: 84, err: Errors.ERROR_S3_DELETE });
+            }
+            console.log(`File deleted successfully. ${data.Location}`);
+            return ({ Code: 0 })               // deleted
+        });
+    } catch (err) {
+        console.log('Error catch', err);
+        return ({ code: 84, err: err });
+    }
+}

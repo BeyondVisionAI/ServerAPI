@@ -12,11 +12,12 @@ const mp3Duration = new Mp3Duration();
 exports.textToSpeech = async function (req, res) {
     console.log("Text To Speech :", req.body);
 
-    if (!req.body.projectID || !req.body.voiceID || !req.body.text || !req.body.format) {
+    if (!req.body.projectID || !req.body.voiceID || !req.body.text || !req.body.format || !req.body.replicaID) {
         res.status(400).send({ err: "Some trouble with the Retreive the Voice" });
         return
     }
 
+    const replicaID = replicaID;
     var projectID = req.body.projectID
     var text = req.body.text
     var format = req.body.format
@@ -27,7 +28,6 @@ exports.textToSpeech = async function (req, res) {
         'OutputFormat': format,
         'VoiceId': voiceID
     }
-    const audioId = uid(10);
 
     const status = await Polly.synthesizeSpeech(params, (err, data) => {
         if (err) {
@@ -36,7 +36,7 @@ exports.textToSpeech = async function (req, res) {
             if (data.AudioStream instanceof Buffer) {
                 const params = {
                     Bucket: "finished-product",
-                    Key: `${projectID}/audio/${audioId}.mp3`,
+                    Key: `${projectID}/audio/${replicaID}.mp3`,
                     Body: data.AudioStream
                 };
 
@@ -63,6 +63,6 @@ exports.textToSpeech = async function (req, res) {
     if (status.err) {
         return (res.status(400).send({ err: status.err }))
     } else {
-        return (res.status(200).send({ audioID: audioId, audioDuration: duration }));
+        return (res.status(200).send({ audioDuration: duration }));
     }
 };
