@@ -20,7 +20,7 @@ exports.newProcessAction = function (req, res) {
         const pathToVideo = `Files/${req.body.projectId}.mp4`;
         const pathToJson = `../MMAction2/${req.body.projectId}.json`;
 
-        const command = `python ../AI_MMAction2/demo/long_video_demo.py ../MMAction2/configs/recognition/tsn/tsn_r50_video_inference_1x1x3_100e_kinetics400_rgb.py ../MMAction2/checkpoints/tsn_r50_1x1x3_100e_kinetics400_rgb_20200614-e508be42.pth ${pathToVideo} ../MMAction2/tools/data/kinetics/label_map_k400.txt ${pathToJson} --input-step 3 --device cpu --threshold 0.2`
+        const command = `python ../AI_MMAction/demo/long_video_demo.py ../MMAction2/configs/recognition/tsn/tsn_r50_video_inference_1x1x3_100e_kinetics400_rgb.py ../MMAction2/checkpoints/tsn_r50_1x1x3_100e_kinetics400_rgb_20200614-e508be42.pth ${pathToVideo} ../MMAction2/tools/data/kinetics/label_map_k400.txt ${pathToJson} --input-step 3 --device cpu --threshold 0.2`
 
         var child = exec(command);
 
