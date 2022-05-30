@@ -46,7 +46,6 @@ exports.projectClosing = function (req, res) {
                         Fs.unlinkSync(filesPath[it]);
                     }
                 }
-
             }
         }
     } catch (err) {
