@@ -45,14 +45,14 @@ exports.uploadFile = async function (bucketnName, keyName, params) {
             throw 'No data set';
         }
         var s3 = new AWS.S3();
-        const params = {
+        const paramsToSend = {
             Bucket: bucketnName,
             Key: keyName,
             Body: data
         };
 
         // Uploading files to the bucket
-        s3.upload(params, function (err, data) {
+        s3.upload(paramsToSend, function (err, data) {
             if (err) {
                 console.log('Error S3', Errors.ERROR_S3_UPLOAD);
                 return ({ code: 84, err: Errors.ERROR_S3_UPLOAD });
