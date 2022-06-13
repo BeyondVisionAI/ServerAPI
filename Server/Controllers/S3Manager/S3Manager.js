@@ -15,7 +15,7 @@ exports.downloadFile = async function (bucketnName, keyName, saveIt = false) {
         if (saveIt === true) {
             var temp = keyName.split('.');
             const fileId = uid(10);
-            const filePath = process.env.FILE_PATH + '/' + fileId + temp[temp.Lenght()];
+            const filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
 
             await (Fs.writeFile(filePath, data, "binary", function (err) {
                 if (err) {

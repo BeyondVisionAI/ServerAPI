@@ -1,5 +1,6 @@
 const { voices } = require("../../datas/config");
 const AWS = require('aws-sdk');
+const Fs = require('fs');
 const Mp3Duration = require('../../datas/Mp3Duration');
 const { Errors } = require("../../datas/Errors.js");
 const s3Manager = require("../S3Manager/S3Manager.js");
@@ -59,9 +60,8 @@ exports.textToSpeech = async function (req, res) {
         let args = {
             replicaID: req.body.replicaID,
             projectID: req.body.projectID,
-            file: `${process.env.FILE_PATH}/${req.body.replicaID}.mp3`
+            file: `${process.env.FILES_DIRECTORY}/${req.body.replicaID}.mp3`
         }
-
         await PollyPromise(paramsToSend, args);
 
         var duration = mp3Duration.getDuration(args.file, (err, duration) => {
