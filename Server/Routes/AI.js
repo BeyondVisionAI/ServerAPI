@@ -8,7 +8,7 @@ module.exports = function (app) {
     console.log("Listen root AI : ");
 
     app.route(`${AIRoot}NewProcessAction`)
-        .post(newProcessAction.NewProcessAction);
+        .post(newProcessAction.newProcessAction);
     console.log(`- ${AIRoot}NewProcessAction`);
 
     app.route(`${AIRoot}StopProcessAction`)

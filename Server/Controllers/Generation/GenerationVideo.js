@@ -2,7 +2,7 @@ var { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 
-exports.generationVideo = function (req, res) {
+exports.generationVideo = async function (req, res) {
     if (!req.body.projectId)
         return (res.status(400).send(Errors.BAD_REQUEST_MISSING_INFOS));
     console.log('Generation Video');

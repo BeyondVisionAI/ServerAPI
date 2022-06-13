@@ -91,7 +91,7 @@ function parseAndGenerateJson(actionsReceive) {
  * @param { Response } res
  * @returns { response to send }
  */
-exports.finishedProcessAction = function (req, res) {
+exports.finishedProcessAction = async function (req, res) {
     var returnCode = 200;
     var returnMessage = "You successfully finished the process";
     const urlSetScript = `https://localhost/projects/${req.body.projectId}/setScript`;

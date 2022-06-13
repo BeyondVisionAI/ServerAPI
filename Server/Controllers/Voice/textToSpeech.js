@@ -1,7 +1,6 @@
 const { voices } = require("../../datas/config");
 const AWS = require('aws-sdk');
-const { uid } = require('uid');
-const Mp3Duration = require('../datas/Mp3Duration');
+const Mp3Duration = require('../../datas/Mp3Duration');
 
 const Polly = new AWS.Polly({
     signatureVersion: 'v4',
@@ -35,7 +34,7 @@ exports.textToSpeech = async function (req, res) {
         } else if (data) {
             if (data.AudioStream instanceof Buffer) {
                 const params = {
-                    Bucket: "finished-product",
+                    Bucket: "bv-replicas",
                     Key: `${projectID}/audio/${replicaID}.mp3`,
                     Body: data.AudioStream
                 };
