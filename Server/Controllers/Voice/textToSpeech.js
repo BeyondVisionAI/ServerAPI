@@ -16,7 +16,7 @@ exports.textToSpeech = async function (req, res) {
         return
     }
 
-    const replicaID = replicaID;
+    const replicaID = req.body.replicaID;
     var projectID = req.body.projectID
     var text = req.body.text
     var format = req.body.format
@@ -35,7 +35,7 @@ exports.textToSpeech = async function (req, res) {
             if (data.AudioStream instanceof Buffer) {
                 const params = {
                     Bucket: "bv-replicas",
-                    Key: `${projectID}/audio/${replicaID}.mp3`,
+                    Key: `${projectID}/${replicaID}.mp3`,
                     Body: data.AudioStream
                 };
 
