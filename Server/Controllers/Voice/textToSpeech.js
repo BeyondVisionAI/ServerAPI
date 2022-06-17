@@ -14,28 +14,32 @@ const mp3Duration = new Mp3Duration();
 
 function PollyPromise(paramsToSend, args) {
     const promise = new Promise((resolve, reject) => {
-        Polly.synthesizeSpeech(paramsToSend, (err, data) => {
-            if (err) {
-                reject(`${Errors.ERROR_POLLY} : ${err}`);
-            } else if (data) {
-                if (data.AudioStream instanceof Buffer) {
-                    Fs.writeFileSync(args.file, data.AudioStream);
+        try {
+            Polly.synthesizeSpeech(paramsToSend, (err, data) => {
+                if (err) {
+                    reject(`${Errors.ERROR_POLLY} : ${err}`);
+                } else if (data) {
+                    if (data.AudioStream instanceof Buffer) {
+                        Fs.writeFileSync(args.file, data.AudioStream);
 
-                    const params = {
-                        saved: false,
-                        data: data.AudioStream
-                    };
+                        const params = {
+                            saved: false,
+                            data: data.AudioStream
+                        };
 
-                    const status = s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectID}/${args.replicaID}.mp3`, params);
-                    if (status.code = 84) {
-                        reject(err);
+                        const status = s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectID}/${args.replicaID}.mp3`, params);
+                        if (status.code = 84) {
+                            reject(err);
+                        }
+                    } else {
+                        reject(Errors.ERROR_POLLY);
                     }
-                } else {
-                    reject(Errors.ERROR_POLLY);
+                    resolve();
                 }
-                resolve();
-            }
-        });
+            });
+        } catch (e) {
+            reject(e);
+        }
     });
 
     return promise;
