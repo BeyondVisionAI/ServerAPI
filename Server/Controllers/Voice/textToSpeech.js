@@ -14,11 +14,11 @@ const mp3Duration = new Mp3Duration();
 
 function PollyPromise(paramsToSend, args) {
     const promise = new Promise((resolve, reject) => {
-        try {
-            Polly.synthesizeSpeech(paramsToSend, (err, data) => {
-                if (err) {
-                    reject(`${Errors.ERROR_POLLY} : ${err}`);
-                } else if (data) {
+        Polly.synthesizeSpeech(paramsToSend, (err, data) => {
+            if (err) {
+                reject(`${Errors.ERROR_POLLY} : ${err}`);
+            } else if (data) {
+                try {
                     if (data.AudioStream instanceof Buffer) {
                         Fs.writeFileSync(args.file, data.AudioStream);
 
@@ -34,12 +34,12 @@ function PollyPromise(paramsToSend, args) {
                     } else {
                         reject(Errors.ERROR_POLLY);
                     }
-                    resolve();
+                } catch (e) {
+                    reject(e)
                 }
-            });
-        } catch (e) {
-            reject(e);
-        }
+                resolve();
+            }
+        });
     });
 
     return promise;
