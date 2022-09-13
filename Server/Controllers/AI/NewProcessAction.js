@@ -3,7 +3,7 @@ var Fs = require('fs');
 const { Errors } = require("../../datas/Errors.js");
 var { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
 
-const processIdPath = "../../datas/processId.json"
+const processIdPath = "./datas/processId.json"
 
 exports.newProcessAction = function (req, res) {
 
@@ -11,10 +11,10 @@ exports.newProcessAction = function (req, res) {
     var returnMessage = "You successfully Generate The Video";
 
     try {
-        let s3FilePathAudio = `${req.body.audioID}.mp3`
-        let audioObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathAudio, true);
+        let s3FilePathVideo = `${req.body.projectId}.mp3`
+        videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathVideo, true);
 
-        if (audioObj.Code === 84) {
+        if (videoObj.Code === 84) {
             throw Error.ERROR_S3_DOWNLOAD;
         }
         const pathToVideo = `Files/${req.body.projectId}.mp4`;

@@ -1,6 +1,6 @@
 const { Errors } = require("../../datas/Errors.js");
 var Fs = require('fs');
-var processIdPath = "../../datas/processId.json"
+var processIdPath = "./datas/processId.json"
 
 exports.stopProcessAction = function (req, res) {
     var returnCode = 200;
