@@ -252,7 +252,7 @@ which is convenient to conduct various experiments.
             init_std=0.01), # Std value for linear layer initiation
             # model training and testing settings
             train_cfg=None,  # Config of training hyperparameters for TSN
-            test_cfg=dict(average_clips=None))  # Config for testing hyperparameters for TSN.
+            test_cfg = dict(average_clips='prob'))  # Config for testing hyperparameters for TSN.
 
     # dataset settings
     dataset_type = 'RawframeDataset'  # Type of dataset for training, validation and testing

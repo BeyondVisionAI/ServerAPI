@@ -5,7 +5,7 @@ module.exports = function (app) {
     const finishedProcessAction = require('../Controllers/AI/FinishedProcessAction.js');
 
 
-    console.log("Listen root AI : ");
+    console.log("Listen route AI : ");
 
     app.route(`${AIRoot}NewProcessAction`)
         .post(newProcessAction.newProcessAction);
