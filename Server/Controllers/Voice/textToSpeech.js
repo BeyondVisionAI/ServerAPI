@@ -27,7 +27,7 @@ function PollyPromise(paramsToSend, args) {
                             data: data.AudioStream
                         };
 
-                        const status = s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectID}/${args.replicaID}.mp3`, params);
+                        const status = s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectId}/${args.replicaId}.mp3`, params);
                         if (status.code = 84) {
                             reject(err);
                         }
@@ -52,19 +52,19 @@ exports.textToSpeech = async function (req, res) {
     var returnMessage = "You successfully TextToSpeech";
 
     try {
-        if (!req.body.projectID || !req.body.voiceID || !req.body.text || !req.body.replicaID) {
+        if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
             throw Errors.BAD_REQUEST_MISSING_INFOS;
         }
         let paramsToSend = {
             'Text': req.body.text,
             'OutputFormat': "mp3",
-            'VoiceId': voices[req.body.voiceID].nameID
+            'VoiceId': voices[req.body.voiceId].nameID
 
         }
         let args = {
-            replicaID: req.body.replicaID,
-            projectID: req.body.projectID,
-            file: `${process.env.FILES_DIRECTORY}/${req.body.replicaID}.mp3`
+            replicaId: req.body.replicaId,
+            projectId: req.body.projectId,
+            file: `${process.env.FILES_DIRECTORY}/${req.body.replicaId}.mp3`
         }
         await PollyPromise(paramsToSend, args);
 

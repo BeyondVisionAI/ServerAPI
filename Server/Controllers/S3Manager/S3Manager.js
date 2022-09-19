@@ -3,19 +3,22 @@ const Fs = require('fs');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 
-exports.downloadFile = async function (bucketnName, keyName, saveIt = false) {
+exports.downloadFile = async function (bucketName, keyName, saveIt = false) {
     try {
         var s3 = new AWS.S3();
+        console.log(`Downloading from ${bucketName} bucket\nWith ID ${keyName}`);
         const data = (await (s3.getObject({
-            Bucket: bucketnName,
+            Bucket: bucketName,
             Key: keyName
         }).promise())).Body;
+
 
         console.log(data);
         if (saveIt === true) {
             var temp = keyName.split('.');
             const fileId = uid(10);
-            const filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
+            //const filePath = process.env.FILES_DIRECTORY + '/' + fileId + '.' + temp[temp.length - 1];
+            const filePath = keyName;
 
             await (Fs.writeFile(filePath, data, "binary", function (err) {
                 if (err) {

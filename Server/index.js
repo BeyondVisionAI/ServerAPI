@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const AWS = require('aws-sdk');
 const app = express();
+require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(
