@@ -149,7 +149,7 @@ def faceRecogniton(args):
         it_frame += 1
     cap.release()
 
-    with open("JSON/" + args.json_file_name, 'w', encoding ='utf8') as f:
+    with open("../Files/Json/" + args.json_file_name, 'w', encoding ='utf8') as f:
         json_object = json.dump(datas, f, allow_nan=True)
 
 def main():
