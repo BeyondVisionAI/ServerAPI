@@ -1,29 +1,31 @@
 const { exec } = require("child_process");
-var Fs = require('fs');
+const Fs = require('fs');
 const { Errors } = require("../../datas/Errors.js");
-var { deleteFile } = require('../S3Manager/S3Manager');
+const { deleteFile } = require('../S3Manager/S3Manager');
 
 const processIdPath = "../../datas/processId.json"
 
+// Not implemented
+
 /**
- * Delete a project
+ * Delete a project and all the files on the AWS
  * @param { Request } req { params: { projectId }, body : { jsonIdFiles }}
  * @param { Response } res
  * @returns { status: Number, message: String }
  */
 
 exports.projectClosing = function (req, res) {
-
-    var returnCode = 200;
-    var returnMessage = "You successfully Close the Project";
+    console.log("Closing a Project...");
+    let returnCode = 200;
+    let returnMessage = "You successfully Close the Project";
 
     try {
 
         if (req.params.projectId === undefined) {
             throw Errors.BAD_REQUEST_BAD_INFOS;
         }
-        var jsonString = Fs.readFileSync(processIdPath);
-        var processId = JSON.parse(jsonString);
+        let jsonString = Fs.readFileSync(processIdPath);
+        let processId = JSON.parse(jsonString);
 
         for (let it in processId.process) {
             if (processId.process[it].projectId = req.body.projectId) {

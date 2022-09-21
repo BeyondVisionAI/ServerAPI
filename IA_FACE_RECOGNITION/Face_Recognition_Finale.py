@@ -178,16 +178,16 @@ def progress_bar(progress, total):
 def sendFinalMessage(args):
     print("Send data to Server API...")
     data = {'jsonPath': args.json_finale_path}
-    server_url = environement['API_SERVER_URL']
-    if server_url == '':
-        server_url = 'https://localhost:8082'
+    url = environement['API_SERVER_URL']
+    if url == '':
+        url = 'https://localhost:8082'
     try:
-        res = requests.post(server_url + '/FaceRecognition/', json=data)
-        returned_data = res.json()
-        print("Message Recieved:", returned_data['result'])
+        url = url + '/AI/FaceRecognition/finishedProcess'
+        res = requests.post(url, json=data)
+        print("Message Recieved:", res)
     except requests.exceptions.RequestException as e:
-        print("Request Error: the program can't access the server specified in the variable environment <API_SERVER_URL> :", server_url)
-        print(e.message)
+        print("Request Error: the program can't access the server specified in the variable environment <API_SERVER_URL> :")
+        print(url)
         exit(84)
     return 0
 

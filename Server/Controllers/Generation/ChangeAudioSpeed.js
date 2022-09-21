@@ -1,16 +1,24 @@
-var { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
+const { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 
-exports.changeAudioSpeed = function (req, res) {
-    var returnCode = 200;
-    var returnMessage = "You successfully Generate The new Audio";
+/**
+ * Change the speed of an audio file  and upload it back to AWS.
+ * @param { Request } req { body: { audioID, newDuration (>0 - 1 - 2 | >0% - 100% - 200%) } }
+ * @param { Response } res
+ * @returns { response to send }
+ */
+
+exports.changeAudioSpeed = async function (req, res) {
+    console.log("Changing an Audio Speed...");
+    let returnCode = 200;
+    let returnMessage = "You successfully generate the new audio";
 
     if (!req.body.audioID || !req.body.newDuration)
         return (res.status(400).send(Errors.BAD_REQUEST_MISSING_INFOS));
     try {
         let s3FilePathAudio = `${req.body.audioID}.mp3`
-        let audioObj = downloadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, s3FilePathAudio, true);
+        let audioObj = downloadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, s3FilePathAudio, true, "Audio");
 
         let actualDuration = mp3Duration.getDuration(file, (err, duration) => {
             if (err)

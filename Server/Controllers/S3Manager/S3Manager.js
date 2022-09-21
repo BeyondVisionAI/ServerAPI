@@ -3,9 +3,9 @@ const Fs = require('fs');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 
-exports.downloadFile = async function (bucketnName, keyName, saveIt = false) {
+exports.downloadFile = async function (bucketnName, keyName, saveIt = false, type = "") {
     try {
-        var s3 = new AWS.S3();
+        let s3 = new AWS.S3();
         const data = (await (s3.getObject({
             Bucket: bucketnName,
             Key: keyName
@@ -13,10 +13,23 @@ exports.downloadFile = async function (bucketnName, keyName, saveIt = false) {
 
         console.log(data);
         if (saveIt === true) {
-            var temp = keyName.split('.');
+            let temp = keyName.split('.');
             const fileId = uid(10);
-            const filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
-
+            let filePath = "";
+            switch (type) {
+                case "Video":
+                    filePath = process.env.FILES_DIRECTORY + '/Videos/' + fileId + temp[temp.Lenght()];
+                    break;
+                case "Audio":
+                    filePath = process.env.FILES_DIRECTORY + '/Audios/' + fileId + temp[temp.Lenght()];
+                    break;
+                case "Image":
+                    filePath = process.env.FILES_DIRECTORY + '/Images/' + fileId + temp[temp.Lenght()];
+                    break;
+                default:
+                    filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
+                    break;
+            }
             await (Fs.writeFile(filePath, data, "binary", function (err) {
                 if (err) {
                     console.log('Error FS', Errors.ERROR_S3_DOWNLOAD);
@@ -36,7 +49,7 @@ exports.downloadFile = async function (bucketnName, keyName, saveIt = false) {
 
 exports.uploadFile = async function (bucketnName, keyName, params) {
     try {
-        var data
+        let data
         if (params.saved) {
             data = await Fs.promises.readFile(params.filePath);
         } else if (params.data) {
@@ -44,7 +57,7 @@ exports.uploadFile = async function (bucketnName, keyName, params) {
         } else {
             throw 'No data set';
         }
-        var s3 = new AWS.S3();
+        let s3 = new AWS.S3();
         const paramsToSend = {
             Bucket: bucketnName,
             Key: keyName,
@@ -71,7 +84,7 @@ exports.createFolder = async function (bucketnName, keyName) {
         if (right(keyName, 1) !== '/')
             keyName += '/';
 
-        var s3 = new AWS.S3();
+        let s3 = new AWS.S3();
         const params = {
             Bucket: bucketnName,
             Key: keyName
@@ -94,7 +107,7 @@ exports.createFolder = async function (bucketnName, keyName) {
 
 exports.deleteFile = async function (bucketName, keyname) {
     try {
-        var s3 = new AWS.S3();
+        let s3 = new AWS.S3();
 
         const params = {
             Bucket: bucketnName,

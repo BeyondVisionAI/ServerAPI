@@ -45,11 +45,18 @@ function PollyPromise(paramsToSend, args) {
     return promise;
 }
 
-exports.textToSpeech = async function (req, res) {
-    console.log("Text To Speech");
+/**
+ * Text to speech with a specific voice.
+ * @param { Request } req { body : { projectId, voiceId, text, replicaId }}
+ * @param { Response } res
+ * @returns { response to send }
+ */
 
-    var returnCode = 200;
-    var returnMessage = "You successfully TextToSpeech";
+exports.textToSpeech = async function (req, res) {
+    console.log("Lingualizing a text...");
+
+    let returnCode = 200;
+    let returnMessage = "You successfully TextToSpeech";
 
     try {
         if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
@@ -64,11 +71,11 @@ exports.textToSpeech = async function (req, res) {
         let args = {
             replicaId: req.body.replicaId,
             projectId: req.body.projectId,
-            file: `${process.env.FILES_DIRECTORY}/${req.body.replicaId}.mp3`
+            file: `${process.env.FILES_DIRECTORY}/Audios/${req.body.replicaId}.mp3`
         }
         await PollyPromise(paramsToSend, args);
 
-        var duration = mp3Duration.getDuration(args.file, (err, duration) => {
+        let duration = mp3Duration.getDuration(args.file, (err, duration) => {
             if (err)
                 throw Errors.INTERNAL_ERROR;
             else

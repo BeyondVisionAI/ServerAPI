@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node -r dotenv/config ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "aws-sdk": "^2.1046.0",
     "body-parser": "^1.19.0",
     "child_process": "^1.0.2",
+    "dotenv": "^16.0.2",
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
