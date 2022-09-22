@@ -20,8 +20,8 @@ exports.finishedProcess = async function (req, res) {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
         }
-
-        let jsonString = Fs.readFileSync('../MMAction2/' + jsonPath);
+        console.log('path :', req.body.jsonPath)
+        let jsonString = Fs.readFileSync(req.body.jsonPath);
         let faceRecognitionReceive = JSON.parse(jsonString);
 
         //TODO do the generation of a better json data from the generated file.
@@ -29,6 +29,7 @@ exports.finishedProcess = async function (req, res) {
         // let jsonToSend = parseAndGenerateJson(actionsReceive);
         let jsonToSend = faceRecognitionReceive;
 
+        console.log("AH")
         jsonString = Fs.readFileSync(processIdPath);
         let processId = JSON.parse(jsonString);
 
@@ -43,10 +44,11 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        await fetch(urlSetScript, { method: 'post', body: jsonString });
+        // await fetch(urlSetScript, { method: 'post', body: jsonString });
     } catch (err) {
         returnCode = 400;
-        returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
+        returnMessage = err;
+        console.log('Error :', err)
     }
     return (res.status(returnCode).send(returnMessage));
 }

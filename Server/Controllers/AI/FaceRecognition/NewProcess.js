@@ -17,41 +17,41 @@ const processIdPath = process.env.PROCESS_ID_FILE;
  * {"images": [ {"name: "Name of the character", "s3ImagePath":"file path of the image on AWS"}, {...}]}
  */
 
-exports.newProcess = function (req, res) {
+exports.newProcess = async function (req, res) {
     console.log("Starting process Face recognition...");
     let returnCode = 200;
     let returnMessage = "You successfully start the process";
 
     try {
-        if (req.body.projectId === undefined || req.body.projectId === null || req.body.jsonImage === undefined || req.body.jsonImage === null ) {
-            throw Error.BAD_REQUEST_MISSING_INFOS;
-        }
-        let s3FilePathVideo = `${req.body.projectId}.mp4`
-        let videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathVideo, true, "Video");
-        if (videoObj.Code === 84) {
-            throw Error.ERROR_S3_DOWNLOAD;
-        }
-        const pathToVideo = videoObj.filePath;
-
-        let jsonImage = JSON.parse(jsonImage)
-        for (let i in jsonImage["images"]) {
-            let s3FilePathImage = jsonImage["images"][i]["s3ImagePath"];
-            let imageObj = downloadFile(process.env.S3_BUCKET_CHARACTER_IMAGE, s3FilePathVideo, true, "Image");
-            if (imageObj.Code === 84) {
-                throw Error.ERROR_S3_DOWNLOAD;
-            } else {
-                jsonImage["images"][i]["path"] = imageObj.filePath;
-            }
-        }
-        const pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Argument-${req.body.projectId}.json`;
-
-        let jsonString = JSON.stringify(jsonImage);
-        Fs.writeFileSync(pathToJsonImage, jsonString);
+    //     if (req.body.projectId === undefined || req.body.projectId === null || req.body.jsonImage === undefined || req.body.jsonImage === null ) {
+    //         throw Error.BAD_REQUEST_MISSING_INFOS;
+    //     }
+    //     let s3FilePathVideo = `${req.body.projectId}.mp4`
+    //     let videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathVideo, true, "Video");
+    //     if (videoObj.Code === 84) {
+    //         throw Error.ERROR_S3_DOWNLOAD;
+    //     }
+    //     const pathToVideo = videoObj.filePath;
+    //
+    //     let jsonImage = JSON.parse(jsonImage)
+    //     for (let i in jsonImage["images"]) {
+    //         let s3FilePathImage = jsonImage["images"][i]["s3ImagePath"];
+    //         let imageObj = downloadFile(process.env.S3_BUCKET_CHARACTER_IMAGE, s3FilePathVideo, true, "Image");
+    //         if (imageObj.Code === 84) {
+    //             throw Error.ERROR_S3_DOWNLOAD;
+    //         } else {
+    //             jsonImage["images"][i]["path"] = imageObj.filePath;
+    //         }
+    //     }
+    //     const pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Argument-${req.body.projectId}.json`;
+    //
+    //     let jsonString = JSON.stringify(jsonImage);
+    //     Fs.writeFileSync(pathToJsonImage, jsonString);
 
         // TODO enlevé avant de passé sur la dev et sur la main / pour test
-        // let jsonString = "";
-        // let pathToVideo = `${process.env.FILES_DIRECTORY}Videos/Test1.mp4`;
-        // let pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Test1.json`;
+        let jsonString = "";
+        let pathToVideo = `${process.env.FILES_DIRECTORY}Videos/Test1.mp4`;
+        let pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Test1.json`;
 
         const command = `python3 ${process.env.IA_FACE_RECOGNITION_DIRECTORY}Face_Recognition_Finale.py -VP ${pathToVideo} -JI ${pathToJsonImage} -ID ${req.body.projectId}`
         let child = exec(command);
@@ -63,7 +63,7 @@ exports.newProcess = function (req, res) {
         processId["Face Recognition"]["process"].push({ 'pid': child.pid, 'projectId': req.body.projectId });
 
         jsonString = JSON.stringify(processId);
-        Fs.writeFileSync(processIdPath, jsonString)
+        Fs.writeFileSync(processIdPath, jsonString);
     } catch (error) {
         returnCode = 400;
         returnMessage = error;

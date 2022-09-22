@@ -1,3 +1,4 @@
+const { exec } = require("child_process");
 const { Errors } = require("../../../datas/Errors.js");
 const Fs = require('fs');
 
@@ -21,11 +22,10 @@ exports.stopProcess = function (req, res) {
         let jsonString = Fs.readFileSync(processIdPath);
         let processId = JSON.parse(jsonString);
 
-        for (let it in processId["Face Recognition"]["process"]) {
+        for (let it = 0; processId["Face Recognition"]["process"][it] !== undefined; it++) {
             if (processId["Face Recognition"]["process"][it]["projectId"] === req.body.projectId) {
                 exec(`Kill ${processId["Face Recognition"]["process"][it]["pid"]}`);
                 processId["Face Recognition"]["process"].splice(it, 1);
-                console.log(`Kill ${processId["Face Recognition"]["process"][it]["pid"]}`);
                 break;
             }
         }
@@ -34,7 +34,8 @@ exports.stopProcess = function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
     } catch (err) {
         returnCode = 400;
-        returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
+        returnMessage = err;
+        console.log("Error :", err)
     }
     return (res.status(returnCode).send(returnMessage));
 }

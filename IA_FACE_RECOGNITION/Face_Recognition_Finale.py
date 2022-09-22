@@ -16,7 +16,7 @@ class Args:
     image_path = []
     send_message = True
     json_finale_path = ''
-    idProject = ''
+    id_project = ''
 
     def __init__(self):
         self.json_finale_path = "../Files/Json/" + str(uuid.uuid1()) + ".json"
@@ -65,15 +65,15 @@ class Args:
                         self.json_finale_path = _json_path
             elif argument == "-ID" or argument == '--IdProject':
                 if len(sys.argv) > it + 1:
-                    self.idProject = sys.argv[it + 1]
+                    self.id_project = sys.argv[it + 1]
                 else:
                     print("Error IdProject : id project not specified")
                     exit(84)
             elif argument == "-DSM" or argument == '--DontSendMessage':
                 self.send_message = False
             it += 1
-        if self.idProject == '' and self.send_message:
-            print("Error idProject/SendMessage: idProject need to be specified while sending a message to the server.")
+        if self.id_project == '' and self.send_message:
+            print("Error id_project/SendMessage: id_project need to be specified while sending a message to the server.")
             exit(84)
         return 0
     
@@ -177,7 +177,7 @@ def progress_bar(progress, total):
 
 def sendFinalMessage(args):
     print("Send data to Server API...")
-    data = {'jsonPath': args.json_finale_path}
+    data = {'jsonPath': args.json_finale_path, 'projectId': args.id_project }
     url = environement['API_SERVER_URL']
     if url == '':
         url = 'https://localhost:8082'
