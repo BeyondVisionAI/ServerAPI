@@ -2,20 +2,22 @@ const { exec } = require("child_process");
 const Fs = require('fs');
 const { Errors } = require("../../../datas/Errors.js");
 const { downloadFile, uploadFile } = require('../../S3Manager/S3Manager');
+const axios = require("axios");
 
 const processIdPath = process.env.PROCESS_ID_FILE;
 
 /**
  * New Process Action of a project
- * @param { Request } req { params: projectId }
+ * @param { Request } req { body: projectId }
  * @param { Response } res
  * @returns { response to send }
  */
 
-exports.newProcess = function (req, res) {
+exports.newProcess = async function (req, res) {
     console.log("Starting process Action...");
     let returnCode = 200;
     let returnMessage = "You successfully Generate The Video";
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
 
     try {
         let s3FilePathVideo = `${req.body.projectId}.mp4`
@@ -28,6 +30,7 @@ exports.newProcess = function (req, res) {
         const pathToJson = `${process.env.FILES_DIRECTORY}Json/Action-${req.body.projectId}.json`;
 
         const command = `python ${process.env.IA_ACTION_DIRECTORY}demo/long_video_demo.py ../MMAction2/configs/recognition/tsn/tsn_r50_video_inference_1x1x3_100e_kinetics400_rgb.py ../MMAction2/checkpoints/tsn_r50_1x1x3_100e_kinetics400_rgb_20200614-e508be42.pth ${pathToVideo} ../MMAction2/tools/data/kinetics/label_map_k400.txt ${pathToJson} --input-step 3 --device cpu --threshold 0.2`
+        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'ActionRecognition' });
 
         let child = exec(command);
 

@@ -3,9 +3,15 @@ const Fs = require('fs');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 
+const AWSAccess = {
+    accessKeyId: process.env.SECRET_KEY_ID_AWS,
+    secretAccessKey: process.env.SECRET_KEY_ACCES_AWS,
+    region: process.env.REGION_AWS
+};
+
 exports.downloadFile = async function (bucketnName, keyName, saveIt = false, type = "") {
     try {
-        let s3 = new AWS.S3();
+        let s3 = new AWS.S3(AWSAccess);
         const data = (await (s3.getObject({
             Bucket: bucketnName,
             Key: keyName
@@ -57,7 +63,7 @@ exports.uploadFile = async function (bucketnName, keyName, params) {
         } else {
             throw 'No data set';
         }
-        let s3 = new AWS.S3();
+        let s3 = new AWS.S3(AWSAccess);
         const paramsToSend = {
             Bucket: bucketnName,
             Key: keyName,
@@ -84,7 +90,7 @@ exports.createFolder = async function (bucketnName, keyName) {
         if (right(keyName, 1) !== '/')
             keyName += '/';
 
-        let s3 = new AWS.S3();
+        let s3 = new AWS.S3(AWSAccess);
         const params = {
             Bucket: bucketnName,
             Key: keyName
@@ -107,7 +113,7 @@ exports.createFolder = async function (bucketnName, keyName) {
 
 exports.deleteFile = async function (bucketName, keyname) {
     try {
-        let s3 = new AWS.S3();
+        let s3 = new AWS.S3(AWSAccess);
 
         const params = {
             Bucket: bucketnName,

@@ -1,5 +1,6 @@
 const { Errors } = require("../../../datas/Errors.js");
 const Fs = require('fs');
+const axios = require("axios");
 
 const processIdPath = process.env.PROCESS_ID_FILE;
 
@@ -96,7 +97,8 @@ exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Action...");
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
-    const urlSetScript = `https://localhost/projects/${req.body.projectId}/setScript`;
+    const urlSetScript = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setScript`;
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
     try {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
@@ -128,7 +130,8 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        await fetch(urlSetScript, { method: 'post', body: jsonString });
+        await axios.post(urlSetScript, { data: jsonString });
+        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'ActionRecognition' });
     } catch (err) {
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;

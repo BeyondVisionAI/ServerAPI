@@ -1,5 +1,6 @@
 const { Errors } = require("../../../datas/Errors.js");
 const Fs = require('fs');
+const axios = require("axios");
 
 const processIdPath = process.env.PROCESS_ID_FILE;
 
@@ -15,7 +16,7 @@ exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Face Recognition...");
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
-    const urlSetScript = `https://localhost/projects/${req.body.projectId}/setScript`;
+    const urlSetFaceRecognition = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setFaceRecognition`;
     try {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
@@ -44,7 +45,9 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        // await fetch(urlSetScript, { method: 'post', body: jsonString });
+        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'FaceRecognition' });
+
+        // await fetch(urlSetFaceRecognition, { method: 'post', body: jsonString });
     } catch (err) {
         returnCode = 400;
         returnMessage = err;
