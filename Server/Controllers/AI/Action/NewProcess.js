@@ -29,7 +29,7 @@ exports.newProcess = async function (req, res) {
         const pathToVideo = `${process.env.FILES_DIRECTORY}/${req.body.projectId}.mp4`;
         const pathToJson = `${process.env.FILES_DIRECTORY}Json/Action-${req.body.projectId}.json`;
 
-        const command = `python ${process.env.IA_ACTION_DIRECTORY}demo/long_video_demo.py ../MMAction2/configs/recognition/tsn/tsn_r50_video_inference_1x1x3_100e_kinetics400_rgb.py ../MMAction2/checkpoints/tsn_r50_1x1x3_100e_kinetics400_rgb_20200614-e508be42.pth ${pathToVideo} ../MMAction2/tools/data/kinetics/label_map_k400.txt ${pathToJson} --input-step 3 --device cpu --threshold 0.2`
+        const command = `python ${process.env.AI_ACTION_DIRECTORY}demo/long_video_demo.py ${process.env.AI_ACTION_DIRECTORY}configs/recognition/tsn/tsn_r50_video_inference_1x1x3_100e_kinetics400_rgb.py ${process.env.AI_ACTION_DIRECTORY}checkpoints/tsn_r50_1x1x3_100e_kinetics400_rgb_20200614-e508be42.pth ${pathToVideo} ${process.env.AI_ACTION_DIRECTORY}tools/data/kinetics/label_map_k400.txt ${pathToJson} --input-step 3 --device cpu --threshold 0.2`
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'ActionRecognition' });
 
         let child = exec(command);

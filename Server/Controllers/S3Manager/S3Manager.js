@@ -9,13 +9,14 @@ const AWSAccess = {
     region: process.env.REGION_AWS
 };
 
-exports.downloadFile = async function (bucketnName, keyName, saveIt = false, type = "") {
+exports.downloadFile = async function (bucketName, keyName, saveIt = false, type = "") {
     try {
         let s3 = new AWS.S3(AWSAccess);
         const data = (await (s3.getObject({
-            Bucket: bucketnName,
+            Bucket: bucketName,
             Key: keyName
         }).promise())).Body;
+
 
         console.log(data);
         if (saveIt === true) {
@@ -53,7 +54,7 @@ exports.downloadFile = async function (bucketnName, keyName, saveIt = false, typ
     }
 };
 
-exports.uploadFile = async function (bucketnName, keyName, params) {
+exports.uploadFile = async function (bucketName, keyName, params) {
     try {
         let data
         if (params.saved) {
@@ -65,7 +66,7 @@ exports.uploadFile = async function (bucketnName, keyName, params) {
         }
         let s3 = new AWS.S3(AWSAccess);
         const paramsToSend = {
-            Bucket: bucketnName,
+            Bucket: bucketName,
             Key: keyName,
             Body: data
         };
@@ -85,14 +86,14 @@ exports.uploadFile = async function (bucketnName, keyName, params) {
     }
 };
 
-exports.createFolder = async function (bucketnName, keyName) {
+exports.createFolder = async function (bucketName, keyName) {
     try {
         if (right(keyName, 1) !== '/')
             keyName += '/';
 
         let s3 = new AWS.S3(AWSAccess);
         const params = {
-            Bucket: bucketnName,
+            Bucket: bucketName,
             Key: keyName
         };
 
@@ -116,7 +117,7 @@ exports.deleteFile = async function (bucketName, keyname) {
         let s3 = new AWS.S3(AWSAccess);
 
         const params = {
-            Bucket: bucketnName,
+            Bucket: bucketName,
             Key: keyName
         };
 

@@ -55,7 +55,7 @@ exports.newProcess = async function (req, res) {
         // let pathToVideo = `${process.env.FILES_DIRECTORY}Videos/Test1.mp4`;
         // let pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Test1.json`;
 
-        const command = `python3 ${process.env.IA_FACE_RECOGNITION_DIRECTORY}Face_Recognition_Finale.py -VP ${pathToVideo} -JI ${pathToJsonImage} -ID ${req.body.projectId}`
+        const command = `python3 ${process.env.AI_FACE_RECOGNITION_DIRECTORY}Face_Recognition_Finale.py -VP ${pathToVideo} -JI ${pathToJsonImage} -ID ${req.body.projectId}`
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'FaceRecognition' });
         let child = exec(command);
         jsonString = Fs.readFileSync(processIdPath);
