@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node -r dotenv/config ."
   },
   "repository": {
     "type": "git",

@@ -1,21 +1,38 @@
 module.exports = function (app) {
-    const AIRoot = '/AI/';
-    const newProcessAction = require('../Controllers/AI/NewProcessAction.js');
-    const stopProcessAction = require('../Controllers/AI/StopProcessAction.js');
-    const finishedProcessAction = require('../Controllers/AI/FinishedProcessAction.js');
+    const AIRoot = '/AI';
+    const ActionRoot = '/Action';
+    const FaceRecognitionRoot = '/FaceRecognition';
+    const actionNewProcessAction = require('../Controllers/AI/Action/NewProcess.js');
+    const actionStopProcessAction = require('../Controllers/AI/Action/StopProcess.js');
+    const actionFinishedProcessAction = require('../Controllers/AI/Action/FinishedProcess.js');
+    const faceRecognitionNewProcessAction = require('../Controllers/AI/FaceRecognition/NewProcess.js');
+    const faceRecognitionStopProcessAction = require('../Controllers/AI/FaceRecognition/StopProcess.js');
+    const faceRecognitionFinishedProcessAction = require('../Controllers/AI/FaceRecognition/FinishedProcess.js');
 
 
     console.log("Listen route AI : ");
 
-    app.route(`${AIRoot}NewProcessAction`)
-        .post(newProcessAction.newProcessAction);
-    console.log(`- ${AIRoot}NewProcessAction`);
+    app.route(`${AIRoot}${ActionRoot}/NewProcess`)
+        .post(actionNewProcessAction.newProcess);
+    console.log(`- ${AIRoot}${ActionRoot}/NewProcess`);
 
-    app.route(`${AIRoot}StopProcessAction`)
-        .post(stopProcessAction.stopProcessAction);
-    console.log(`- ${AIRoot}StopProcessAction`);
+    app.route(`${AIRoot}${ActionRoot}/StopProcess`)
+        .post(actionStopProcessAction.stopProcess);
+    console.log(`- ${AIRoot}${ActionRoot}/StopProcess`);
 
-    app.route(`${AIRoot}FinishedProcessAction`)
-        .post(finishedProcessAction.finishedProcessAction);
-    console.log(`- ${AIRoot}finishedProcess`);
+    app.route(`${AIRoot}${ActionRoot}/FinishedProcess`)
+        .post(actionFinishedProcessAction.finishedProcess);
+    console.log(`- ${AIRoot}${ActionRoot}/finishedProcess`);
+
+    app.route(`${AIRoot}${FaceRecognitionRoot}/NewProcess`)
+        .post(faceRecognitionNewProcessAction.newProcess);
+    console.log(`- ${AIRoot}${FaceRecognitionRoot}/NewProcess`);
+
+    app.route(`${AIRoot}${FaceRecognitionRoot}/StopProcess`)
+        .post(faceRecognitionStopProcessAction.stopProcess);
+    console.log(`- ${AIRoot}${FaceRecognitionRoot}/StopProcess`);
+
+    app.route(`${AIRoot}${FaceRecognitionRoot}/FinishedProcess`)
+        .post(faceRecognitionFinishedProcessAction.finishedProcess);
+    console.log(`- ${AIRoot}${FaceRecognitionRoot}/finishedProcess`);
 }

@@ -4,6 +4,7 @@ const Fs = require('fs');
 const Mp3Duration = require('../../datas/Mp3Duration');
 const { Errors } = require("../../datas/Errors.js");
 const s3Manager = require("../S3Manager/S3Manager.js");
+const axios = require("axios");
 
 const Polly = new AWS.Polly({
     signatureVersion: 'v4',
@@ -13,8 +14,8 @@ const Polly = new AWS.Polly({
 const mp3Duration = new Mp3Duration();
 
 function PollyPromise(paramsToSend, args) {
-    const promise = new Promise((resolve, reject) => {
-        Polly.synthesizeSpeech(paramsToSend, (err, data) => {
+    const returnValue = new Promise((resolve, reject) => {
+        Polly.synthesizeSpeech(paramsToSend, async (err, data) => {
             if (err) {
                 reject(`${Errors.ERROR_POLLY} : ${err}`);
             } else if (data) {
@@ -27,8 +28,8 @@ function PollyPromise(paramsToSend, args) {
                             data: data.AudioStream
                         };
 
-                        const status = s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectId}/${args.replicaId}.mp3`, params);
-                        if (status.code = 84) {
+                        const status = await s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectId}/${args.replicaId}.mp3`, params);
+                        if (status.code === 84) {
                             reject(err);
                         }
                     } else {
@@ -37,19 +38,26 @@ function PollyPromise(paramsToSend, args) {
                 } catch (e) {
                     reject(e)
                 }
-                resolve();
+                resolve('Success');
             }
         });
     });
 
-    return promise;
+    return returnValue;
 }
 
-exports.textToSpeech = async function (req, res) {
-    console.log("Text To Speech");
+/**
+ * Text to speech with a specific voice.
+ * @param { Request } req { body : { projectId, voiceId, text, replicaId }}
+ * @param { Response } res
+ * @returns { response to send }
+ */
 
-    var returnCode = 200;
-    var returnMessage = "You successfully TextToSpeech";
+exports.textToSpeech = async function (req, res) {
+    console.log("Lingualizing a text...");
+    let returnCode = 200;
+    let returnMessage = "You successfully TextToSpeech";
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
 
     try {
         if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
@@ -64,11 +72,17 @@ exports.textToSpeech = async function (req, res) {
         let args = {
             replicaId: req.body.replicaId,
             projectId: req.body.projectId,
-            file: `${process.env.FILES_DIRECTORY}/${req.body.replicaId}.mp3`
+            file: `${process.env.FILES_DIRECTORY}/Audios/${req.body.replicaId}.mp3`
         }
-        await PollyPromise(paramsToSend, args);
-
-        var duration = mp3Duration.getDuration(args.file, (err, duration) => {
+        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'FaceRecognition' });
+        let returnValue = await PollyPromise(paramsToSend, args);
+        if (returnValue === 'Success') {
+            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'FaceRecognition' });
+        } else {
+            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'FaceRecognition' });
+            throw returnValue;
+        }
+        let duration = mp3Duration.getDuration(args.file, (err, duration) => {
             if (err)
                 throw Errors.INTERNAL_ERROR;
             else
