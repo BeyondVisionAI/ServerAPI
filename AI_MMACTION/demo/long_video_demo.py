@@ -204,8 +204,8 @@ def show_results(model, data, label, args):
         textinfo = {"fps" : fps}
         textinfo.update(out_json)
         with open(args.out_file, 'w') as js:
-            res = dict({'fps' : fps}.items() + out_json.items())
-            print(res.dump())
+            res = dict(list({'fps' : fps}.items()) + list(out_json.items()))
+            #print(res.dump())
             json.dump(textinfo, js)
            # json.dump(out_json, js)
 
