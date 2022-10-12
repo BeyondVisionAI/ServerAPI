@@ -97,8 +97,9 @@ exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Action...");
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
-    const urlSetScript = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setScript`;
     const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
+    // TODO Faire une routes et tous le stockage des infos pour la partie IA Face reco
+    const urlSetScript = '';
     try {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
@@ -130,8 +131,8 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        await axios.post(urlSetScript, { data: jsonString });
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'ActionRecognition' });
+        await axios.post(urlSetScript, { data: jsonString });
     } catch (err) {
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;

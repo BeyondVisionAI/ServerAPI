@@ -16,6 +16,7 @@ exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Face Recognition...");
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
     const urlSetFaceRecognition = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setFaceRecognition`;
     try {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
@@ -47,7 +48,7 @@ exports.finishedProcess = async function (req, res) {
         jsonString = JSON.stringify(jsonToSend);
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'FaceRecognition' });
 
-        // await fetch(urlSetFaceRecognition, { method: 'post', body: jsonString });
+        await axios.post(urlSetFaceRecognition, { jsonResponse: jsonString });
     } catch (err) {
         returnCode = 400;
         returnMessage = err;

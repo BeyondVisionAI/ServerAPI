@@ -1,7 +1,7 @@
 const { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
-
+const axios = require('axios');
 /**
  * Fusion the source Video and the "Final audio" to create the "Final video"
  * @param { Request } req { body: { projectId } }
@@ -19,10 +19,7 @@ exports.generationVideo = async function (req, res) {
     let returnMessage = "You successfully generate the video";
     let returnStatus = "Done";
     try {
-        await fetch(urlSetStatus, {
-            method: 'post',
-            body: JSON.stringify({ statusType: 'InProgress', stepType: 'VideoGeneration' })
-        });
+        await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'VideoGeneration' });
 
         let s3FilePathRawVideo = `${req.body.projectId}.mp4`
         let s3FilePathAudio = `Audio/${req.body.projectId}.mp3`
@@ -62,9 +59,6 @@ exports.generationVideo = async function (req, res) {
         returnStatus = 'Error';
     }
     const temp = res.status(returnCode).send(returnMessage);
-    await fetch(urlSetStatus, {
-        method: 'post',
-        body: JSON.stringify({ statusType: returnStatus, stepType: 'VideoGeneration' })
-    });
+    await axios.post(urlSetStatus, { statusType: returnStatus, stepType: 'VideoGeneration' });
     return (temp);
 }
