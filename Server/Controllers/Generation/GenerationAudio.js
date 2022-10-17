@@ -1,4 +1,4 @@
-const { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
+const { downloadFile, uploadFile } = require('../MediaManager/S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 const axios = require('axios');

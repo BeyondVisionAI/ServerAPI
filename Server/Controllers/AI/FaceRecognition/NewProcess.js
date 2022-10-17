@@ -1,7 +1,7 @@
 const { exec } = require("child_process");
 const Fs = require('fs');
 const { Errors } = require("../../../datas/Errors.js");
-const { downloadFile, uploadFile } = require('../../S3Manager/S3Manager');
+const { downloadFile, uploadFile } = require('../../MediaManager/S3Manager/S3Manager');
 const axios = require("axios");
 
 const processIdPath = process.env.PROCESS_ID_FILE;

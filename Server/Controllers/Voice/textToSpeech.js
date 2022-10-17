@@ -3,7 +3,7 @@ const AWS = require('aws-sdk');
 const Fs = require('fs');
 const Mp3Duration = require('../../datas/Mp3Duration');
 const { Errors } = require("../../datas/Errors.js");
-const s3Manager = require("../S3Manager/S3Manager.js");
+const s3Manager = require("../MediaManager/S3Manager/S3Manager.js");
 const axios = require("axios");
 
 const Polly = new AWS.Polly({

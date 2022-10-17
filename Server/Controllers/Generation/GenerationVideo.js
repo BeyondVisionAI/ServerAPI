@@ -1,4 +1,4 @@
-const { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
+const { useSignedUrlDownload, useSignedUrlUpload } = require('../MediaManager/MediaManager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 const axios = require('axios');
@@ -11,22 +11,22 @@ const axios = require('axios');
 
 exports.generationVideo = async function (req, res) {
     console.log("Generating a Final Video...");
-    if (!req.body.projectId)
-        return (res.status(400).send(Errors.BAD_REQUEST_MISSING_INFOS));
     console.log('Generation Video');
     const urlSetStatus = `https://localhost/projects/${req.body.projectId}/setStatus`;
     let returnCode = 200;
     let returnMessage = "You successfully generate the video";
     let returnStatus = "Done";
     try {
+        if (!req.body.projectId || !req.body.signedUrlVideoSource || !req.body.signedUrlFinishedAudio)
+            throw new Errors.BAD_REQUEST_MISSING_INFOS;
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'VideoGeneration' });
 
         let s3FilePathRawVideo = `${req.body.projectId}.mp4`
         let s3FilePathAudio = `Audio/${req.body.projectId}.mp3`
         let s3FilePathFinalVideo = `Video/${req.body.projectId}.mp4`
 
-        let videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathRawVideo, true, "Video");
-        let audioObj = downloadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, s3FilePathAudio, true, "Audio");
+        let videoObj = useSignedUrlDownload(req.body.signedUrlVideoSource, 'Video');
+        let audioObj = useSignedUrlDownload(req.body.signedUrlFinishedAudio);
 
         let outputPath = process.env.FILE_PATH + uid(10) + '.mp4'
         let code = await exec(`ffmpeg.exe -i ${videoObj.filePath} -i ${audioObj.filePath} -c copy ${outputPath}`,
@@ -46,7 +46,7 @@ exports.generationVideo = async function (req, res) {
             returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
             returnStatus = 'Error';
         } else {
-            let uploadStatus = uploadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, s3FilePathFinalVideo, { saved: true, filePath: outputPath })
+            let uploadStatus = useSignedUrlUpload( { saved: true, filePath: outputPath })
             if (uploadStatus.code === 84) {
                 returnCode = 400;
                 returnMessage = Errors.BAD_REQUEST_BAD_INFOS;

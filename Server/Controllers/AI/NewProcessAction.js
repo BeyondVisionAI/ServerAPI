@@ -2,7 +2,7 @@ const { exec } = require("child_process");
 var Fs = require('fs');
 const { stdout } = require("process");
 const { Errors } = require("../../datas/Errors.js");
-var { downloadFile, uploadFile } = require('../S3Manager/S3Manager');
+var { downloadFile, uploadFile } = require('../MediaManager/S3Manager/S3Manager');
 
 const processIdPath = "./datas/processId.json"
 
