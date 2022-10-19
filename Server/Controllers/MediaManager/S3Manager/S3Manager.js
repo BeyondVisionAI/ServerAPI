@@ -1,7 +1,7 @@
 var AWS = require('aws-sdk');
 const Fs = require('fs');
 const { uid } = require('uid');
-const { Errors } = require("../../datas/Errors.js");
+const { Errors } = require("../../../datas/Errors.js");
 
 const AWSAccess = {
     accessKeyId: process.env.SECRET_KEY_ID_AWS,
