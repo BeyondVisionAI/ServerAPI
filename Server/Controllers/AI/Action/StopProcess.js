@@ -36,7 +36,7 @@ exports.stopProcess = async function (req, res) {
 
         jsonString = JSON.stringify(processId);
         Fs.writeFileSync(processIdPath, jsonString);
-        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Stop', stepType: 'ActionRecognition' });
+        await axios.post(urlSetStatus, { statusType: 'Stop', stepType: 'ActionRetrieve' });
     } catch (err) {
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;

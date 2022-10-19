@@ -95,6 +95,10 @@ function parseAndGenerateJson(actionsReceive) {
 
 exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Action...");
+    console.log(req.body);
+    console.log("jsonPath :", req.body.jsonPath);
+    console.log("projectId :", req.body.projectId);
+
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
     const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
@@ -105,8 +109,8 @@ exports.finishedProcess = async function (req, res) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
         }
 
-        let jsonString = Fs.readFileSync('../MMAction2/' + jsonPath);
-        let actionsReceive = JSON.parse(jsonString);
+        let jsonString = Fs.readFileSync(req.body.jsonPath);
+        let actionsReceive = jsonString;
 
         // Generate all the action with the start step and the number step
         let jsonToSend = parseAndGenerateJson(actionsReceive);
@@ -131,9 +135,10 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'ActionRecognition' });
+        await axios.post(urlSetStatus, { statusType: 'Done', stepType: 'ActionRetrieve' });
         await axios.post(urlSetScript, { data: jsonString });
     } catch (err) {
+        console.log("Error is :", err);
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
     }

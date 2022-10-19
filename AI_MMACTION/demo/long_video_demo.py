@@ -5,6 +5,7 @@ import random
 from collections import deque
 from operator import itemgetter
 
+import requests
 import cv2
 import mmcv
 import numpy as np
@@ -37,6 +38,7 @@ def parse_args():
     parser.add_argument('video_path', help='video file/url')
     parser.add_argument('label', help='label file')
     parser.add_argument('out_file', help='output result file in video/json')
+    parser.add_argument('projectId', help='Id of the project')
     parser.add_argument(
         '--input-step',
         type=int,
@@ -207,6 +209,13 @@ def show_results(model, data, label, args):
             res = dict(list({'fps' : fps}.items()) + list(out_json.items()))
             #print(res.dump())
             json.dump(textinfo, js)
+            payload_raw = {
+                "jsonPath": args.out_file,
+                "projectId": args.projectId
+            }
+            payload_js = json.dumps(payload_raw)
+            x = requests.post('http://localhost:8082/AI/Action/FinishedProcess', json=payload_raw);
+            print(x.text)
            # json.dump(out_json, js)
 
 
