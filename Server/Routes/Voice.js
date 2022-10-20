@@ -7,9 +7,9 @@ module.exports = function (app) {
 
     app.route(`${VoiceRoot}/TextToSpeech`)
         .post(textToSpeech.textToSpeech);
-    console.log(`- ${VoiceRoot}/TextToSpeech`);
+    console.log(`- POST : ${VoiceRoot}/TextToSpeech`);
 
     app.route(`${VoiceRoot}/RetrieveVoices`)
         .get(retrieveVoices.retrieveVoices);
-    console.log(`- ${VoiceRoot}/RetrieveVoices`);
+    console.log(`- GET : ${VoiceRoot}/RetrieveVoices`);
 }

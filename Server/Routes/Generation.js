@@ -8,13 +8,13 @@ module.exports = function (app) {
 
     app.route(`${GenerationRoot}/ChangeAudioSpeed`)
         .post(changeAudioSpeed.changeAudioSpeed);
-    console.log(`- ${GenerationRoot}/ChangeAudioSpeed`);
+    console.log(`- POST : ${GenerationRoot}/ChangeAudioSpeed`);
 
     app.route(`${GenerationRoot}/GenerationAudio`)
         .post(generationAudio.generationAudio);
-    console.log(`- ${GenerationRoot}/GenerationAudio`);
+    console.log(`- POST : ${GenerationRoot}/GenerationAudio`);
 
     app.route(`${GenerationRoot}/GenerationVideo`)
         .post(generationVideo.generationVideo);
-    console.log(`- ${GenerationRoot}/GenerationVideo`);
+    console.log(`- POST : ${GenerationRoot}/GenerationVideo`);
 };

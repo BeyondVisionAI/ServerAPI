@@ -40,11 +40,10 @@ exports.downloadFile = async function (bucketName, keyName, saveIt = false, type
             await (Fs.writeFile(filePath, data, "binary", function (err) {
                 if (err) {
                     console.log('Error FS', Errors.ERROR_S3_DOWNLOAD);
-                    return ({ code: 84, err: Errors.ERROR_S3_DOWNLOAD });
-                } else {
-                    return ({ code: 0, filePath: filePath, fileId: fileId, data: data })
+                    throw ({ code: 84, err: Errors.ERROR_S3_DOWNLOAD });
                 }
             }));
+            return ({code : 0, filePath: filePath, fileId: fileId, data: data})
         } else {
             return ({ code: 0, data: data });
         }
@@ -72,14 +71,14 @@ exports.uploadFile = async function (bucketName, keyName, params) {
         };
 
         // Uploading files to the bucket
-        s3.upload(paramsToSend, function (err, data) {
+        return (await s3.upload(paramsToSend, function (err, data) {
             if (err) {
                 console.log('Error S3', Errors.ERROR_S3_UPLOAD);
                 return ({ code: 84, err: Errors.ERROR_S3_UPLOAD });
             }
             console.log(`File uploaded successfully. ${data.Location}`);
-            return ({ Code: 0 })
-        });
+            return ({ code: 0 })
+        }));
     } catch (err) {
         console.log('Error catch', err);
         return ({ code: 84, err: err });
@@ -98,14 +97,14 @@ exports.createFolder = async function (bucketName, keyName) {
         };
 
         // Uploading the folder to the bucket
-        s3.upload(params, function (err, data) {
+        return (await s3.upload(params, function (err, data) {
             if (err) {
                 console.log('Error S3', Errors.ERROR_S3_UPLOAD);
                 return ({ code: 84, err: Errors.ERROR_S3_UPLOAD });
             }
             console.log(`Folder created successfully. ${data.Location}`);
-            return ({ Code: 0 })
-        });
+            return ({ code: 0 })
+        }));
     } catch (err) {
         console.log('Error catch', err);
         return ({ code: 84, err: err });
@@ -121,14 +120,14 @@ exports.deleteFile = async function (bucketName, keyname) {
             Key: keyName
         };
 
-        s3.deleteObject(params, function (err, data) {
+        return (await s3.deleteObject(params, function (err, data) {
             if (err) {
                 console.log('Error S3', Errors.ERROR_S3_DELETE);
                 return ({ code: 84, err: Errors.ERROR_S3_DELETE });
             }
             console.log(`File deleted successfully. ${data.Location}`);
-            return ({ Code: 0 })               // deleted
-        });
+            return ({ code: 0 })               // deleted
+        }));
     } catch (err) {
         console.log('Error catch', err);
         return ({ code: 84, err: err });

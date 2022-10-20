@@ -21,11 +21,11 @@ exports.newProcess = async function (req, res) {
 
     try {
         let s3FilePathVideo = `${req.body.projectId}.mp4`
-        let videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathVideo, true, "Video");
+        // let videoObj = downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, s3FilePathVideo, true, "Video");
 
-        if (videoObj.Code === 84) {
-            throw Error.ERROR_S3_DOWNLOAD;
-        }
+        // if (videoObj.Code === 84) {
+        //     throw Error.ERROR_S3_DOWNLOAD;
+        // }
         const pathToVideo = `${process.env.FILES_DIRECTORY}/${req.body.projectId}.mp4`;
         const pathToJson = `${process.env.FILES_DIRECTORY}Json/Action-${req.body.projectId}.json`;
 

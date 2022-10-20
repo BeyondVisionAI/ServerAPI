@@ -74,12 +74,12 @@ exports.textToSpeech = async function (req, res) {
             projectId: req.body.projectId,
             file: `${process.env.FILES_DIRECTORY}/Audios/${req.body.replicaId}.mp3`
         }
-        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'FaceRecognition' });
+        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
         let returnValue = await PollyPromise(paramsToSend, args);
         if (returnValue === 'Success') {
-            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'FaceRecognition' });
+            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
         } else {
-            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'FaceRecognition' });
+            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
             throw returnValue;
         }
         let duration = mp3Duration.getDuration(args.file, (err, duration) => {

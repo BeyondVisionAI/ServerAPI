@@ -7,5 +7,5 @@ module.exports = function (app) {
 
     app.route(`${ProjectRoute}/ProjectClosing/:projectId`)
         .post(projectClosing.projectClosing);
-    console.log(` - ${ProjectRoute}/ProjectClosing          # Dont touch not implemented`);
+    console.log(` - POST : ${ProjectRoute}/ProjectClosing          # Dont touch not implemented`);
 }

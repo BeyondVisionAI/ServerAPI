@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const AWS = require('aws-sdk');
 const app = express();
+const cors = require('cors');
 require('dotenv').config();
 
 app.use(bodyParser.json());
@@ -18,15 +19,23 @@ AWS.config.update({
   region: process.env.REGION_AWS
 });
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-  app.options('*', (req, res) => {
-    res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
-    res.send();
-  });
-});
+app.use(
+    cors({
+      origin: ['http://localhost:8080', 'http://localhost'],
+      credentials: true,
+      optionsSuccessStatus: 200
+    })
+);
+
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//   next();
+//   app.options('*', (req, res) => {
+//     res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+//     res.send();
+//   });
+// });
 
 var routes = require('./Routes/routes');
 
