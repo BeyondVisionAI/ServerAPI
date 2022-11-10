@@ -27,18 +27,23 @@ function PollyPromise(paramsToSend, args) {
                             saved: false,
                             data: data.AudioStream
                         };
+                        var duration = mp3Duration.getDuration(params.data, (err) => {
+                            if (err)
+                                reject({description: 'Error', error: Errors.INTERNAL_ERROR});
+                        });
 
                         const status = await s3Manager.uploadFile(process.env.S3_BUCKET_AUDIOS_AWS, `${args.projectId}/${args.replicaId}.mp3`, params);
                         if (status.code === 84) {
-                            reject(err);
+                            reject({description: 'Error', error: err});
                         }
                     } else {
-                        reject(Errors.ERROR_POLLY);
+                        reject({description: 'Error', error: Errors.ERROR_POLLY});
                     }
                 } catch (e) {
-                    reject(e)
+                    reject({description: 'Error', error: e})
                 }
-                resolve('Success');
+
+                resolve({description: 'Success', audioDuration: duration * 1000});
             }
         });
     });
@@ -51,7 +56,7 @@ function PollyPromise(paramsToSend, args) {
  * @param { Request } req { body : { projectId, voiceId, text, replicaId }}
  * @param { Response } res
  * @returns { response to send }
- */
+ **/
 
 exports.textToSpeech = async function (req, res) {
     console.log("Lingualizing a text...");
@@ -76,19 +81,13 @@ exports.textToSpeech = async function (req, res) {
         }
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
         let returnValue = await PollyPromise(paramsToSend, args);
-        if (returnValue === 'Success') {
+        if (returnValue.description === 'Success') {
             await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
         } else {
             await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
             throw returnValue;
         }
-        let duration = mp3Duration.getDuration(args.file, (err, duration) => {
-            if (err)
-                throw Errors.INTERNAL_ERROR;
-            else
-                return duration
-        });
-        returnMessage = { description: "You successfully TextToSpeech", audioDuration: duration }
+        returnMessage = { description: "You successfully TextToSpeech", audioDuration: returnValue.audioDuration }
     } catch (error) {
         returnCode = 400;
         returnMessage = error;
