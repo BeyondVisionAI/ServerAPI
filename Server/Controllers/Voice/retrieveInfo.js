@@ -11,7 +11,7 @@ exports.retrieveLanguages = function (req, res) {
     console.log("Retrieving Languages...");
     let returnValue = { language: [] };
     for (let voice of voices) {
-        if (!voice.language in returnValue.language) {
+        if (returnValue.language.findIndex(item => item === voice) === -1) {
             returnValue.language.push(voice.language);
         }
     }
