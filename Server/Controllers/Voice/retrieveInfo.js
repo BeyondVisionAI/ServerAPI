@@ -29,12 +29,9 @@ exports.retrieveVoices = function (req, res) {
     console.log("Retrieving Voices...");
     let returnValue = { voices: [] };
 
-    console.log(req.body.language);
     if (!req.body.language) {
-        console.log('Nop');
         returnValue = voices
     } else {
-        console.log('Yep');
         for (let voice of voices) {
             if (voice.language === req.body.language) {
                 returnValue.voices.push(voice);
