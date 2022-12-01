@@ -9,34 +9,43 @@ const AWSAccess = {
     region: process.env.REGION_AWS
 };
 
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+
 exports.downloadFile = async function (bucketName, keyName, saveIt = false, type = "") {
+    console.log("access id is: " + AWSAccess.accessKeyId);
+    console.log("secret id is: " + AWSAccess.secretAccessKey);
+    console.log("region is: " + AWSAccess.region);
+    console.log("Bucket name: " + bucketName);
+    console.log("Key: " + keyName);
+    
     try {
         let s3 = new AWS.S3(AWSAccess);
+        sleep(5000);
         const data = (await (s3.getObject({
             Bucket: bucketName,
             Key: keyName
         }).promise())).Body;
 
 
-        console.log(data);
         if (saveIt === true) {
             let temp = keyName.split('.');
             const fileId = uid(10);
             let filePath = "";
-            switch (type) {
-                case "Video":
-                    filePath = process.env.FILES_DIRECTORY + '/Videos/' + fileId + temp[temp.Lenght()];
-                    break;
-                case "Audio":
-                    filePath = process.env.FILES_DIRECTORY + '/Audios/' + fileId + temp[temp.Lenght()];
-                    break;
-                case "Image":
-                    filePath = process.env.FILES_DIRECTORY + '/Images/' + fileId + temp[temp.Lenght()];
-                    break;
-                default:
-                    filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
-                    break;
+
+            if (type === "") {
+                filePath = `${process.env.FILES_DIRECTORY}/${fileId}.${temp[temp.length - 1]}`;
+            } else {
+                filePath = `${process.env.FILES_DIRECTORY}/${type}s/${fileId}.${temp[temp.length - 1]}`;
             }
+            
+            console.log(`${process.env.FILES_DIRECTORY}/${type}s/${fileId}.${temp[temp.length - 1]}`);
+ 
             await (Fs.writeFile(filePath, data, "binary", function (err) {
                 if (err) {
                     console.log('Error FS', Errors.ERROR_S3_DOWNLOAD);

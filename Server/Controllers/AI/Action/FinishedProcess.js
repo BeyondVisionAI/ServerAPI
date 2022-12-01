@@ -21,15 +21,17 @@ function parseAndGenerateJson(actionsReceive) {
     let tempKey = 0;
     let lastItActionPush = 0
 
-    actionsToSend['fps'] = 30.0;
+    actionsToSend['fps'] = 0;
 
     for (let key in actionsReceive) {
+        console.log(key);
         if (actionsToSend.script !== undefined) {
             actionsToSend.script.Lenght - 1;
         } else {
             actionsToSend.script = [];
         }
         if (key === 'fps') {
+            //console.log("found FPS");
             actionsToSend['fps'] = parseFloat(actionsReceive[key]);
         } else if (actionsReceive[key] !== 'Preparing action recognition ...') {
             tempKey = parseInt(key);
@@ -43,19 +45,14 @@ function parseAndGenerateJson(actionsReceive) {
                 const action = actionsReceive[key]['1'].split(': ');
                 const percent = parseFloat(action[1]) * 5.0;
                 if (!silence && itStart === -1) {
-                    // first action recieved
+                    // first action received
                     itStart = tempKey;
-                    if (percent >= 90.0) {
-                        actionsToSend = addNewActionToJson(
-                            actionsToSend,
-                            action[0],
-                            percent,
-                            0,
-                        );
-                        silence = false;
-                    } else {
-                        silence = true;
-                    }
+                    actionsToSend = addNewActionToJson(
+                        actionsToSend,
+                        action[0],
+                        percent,
+                        0,
+                    );
                 } else if (
                     !silence &&
                     actionsToSend.script[lastItActionPush].actionName === action[0]
@@ -63,7 +60,7 @@ function parseAndGenerateJson(actionsReceive) {
                     // Same action recieved next to it
                     actionsToSend.script[lastItActionPush].nbIT += 1;
                 } else {
-                    if (percent >= 90.0) {
+                    if (percent >= 0) {
                         // New different action recieved
                         const realItStart = tempKey - itStart;
                         actionsToSend = addNewActionToJson(
@@ -95,25 +92,30 @@ function parseAndGenerateJson(actionsReceive) {
 
 exports.finishedProcess = async function (req, res) {
     console.log("Finishing process Action...");
-    console.log(req.body);
+    //console.log(req.body);
     console.log("jsonPath :", req.body.jsonPath);
     console.log("projectId :", req.body.projectId);
+    const jsonPath = `${req.body.jsonPath}`;
+    const userId = req.body.userId;
+    const projectId = req.body.projectId;
 
     let returnCode = 200;
     let returnMessage = "You successfully finished the process";
-    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${projectId}/setStatus`;
     // TODO Faire une routes et tous le stockage des infos pour la partie IA Face reco
-    const urlSetScript = '';
     try {
         if (req.body.jsonPath === undefined || req.body.projectId === undefined) {
             throw (Error.BAD_REQUEST_MISSING_INFO);
         }
+    const urlSetReplicas = `${process.env.BACKEND_URL}/projects/${projectId}/setReplicas`;
 
-        let jsonString = Fs.readFileSync(req.body.jsonPath);
-        let actionsReceive = jsonString;
+        let jsonString = Fs.readFileSync(jsonPath, 'utf8');
+        let actionsReceive = JSON.parse(jsonString);
 
+        console.log(actionsReceive);
         // Generate all the action with the start step and the number step
         let jsonToSend = parseAndGenerateJson(actionsReceive);
+        
 
         // Add Step to TimeStamp
         for (let key in jsonToSend.script) {
@@ -125,7 +127,7 @@ exports.finishedProcess = async function (req, res) {
         let processId = JSON.parse(jsonString);
 
         for (let it in processId["Action"]["process"]) {
-            if (processId["Action"]["process"][it]["projectId"] === req.body.projectId) {
+            if (processId["Action"]["process"][it]["projectId"] === projectId) {
                 processId["Action"]["process"].splice(it, 1);
                 break;
             }
@@ -135,8 +137,17 @@ exports.finishedProcess = async function (req, res) {
         Fs.writeFileSync(processIdPath, jsonString);
         returnMessage = 'The "finished process Action" successfully catch !';
         jsonString = JSON.stringify(jsonToSend);
-        await axios.post(urlSetStatus, { statusType: 'Done', stepType: 'ActionRetrieve' });
-        await axios.post(urlSetScript, { data: jsonString });
+        await axios.post(urlSetStatus, { 
+            statusType: 'Done',
+            stepType: 'ActionRetrieve',
+        });
+        console.log(`Sending a post to setReplicas with infos:\n projectId: ${projectId}\nuserId: ${userId}\nactionsJson:`);
+        let script = (JSON.parse(jsonString).script);
+        console.log(script);
+        await axios.post(urlSetReplicas, {
+            userId: userId,
+            actionsJson: jsonString,
+        });
     } catch (err) {
         console.log("Error is :", err);
         returnCode = 400;
