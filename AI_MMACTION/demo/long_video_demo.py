@@ -18,6 +18,7 @@ from mmaction.datasets.pipelines import Compose
 
 #CUSTOM IMPORTS
 import requests
+#import time
 
 FONTFACE = cv2.FONT_HERSHEY_COMPLEX_SMALL
 FONTSCALE = 1
@@ -217,8 +218,9 @@ def show_results(model, data, label, args):
                 "userId": args.userId,
                 "projectId": args.projectId
             }
-            x = requests.post('http://localhost:8082/AI/Action/FinishedProcess', json=payload_raw);
-            print(x.text)
+        #time.sleep(10)
+        x = requests.post('http://localhost:8082/AI/Action/FinishedProcess', json=payload_raw);
+        print(x.text)
 
 
 def inference(model, data, args, frame_queue):

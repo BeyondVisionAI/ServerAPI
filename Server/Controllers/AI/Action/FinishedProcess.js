@@ -24,7 +24,7 @@ function parseAndGenerateJson(actionsReceive) {
     actionsToSend['fps'] = 0;
 
     for (let key in actionsReceive) {
-        console.log(key);
+       // console.log(key);
         if (actionsToSend.script !== undefined) {
             actionsToSend.script.Lenght - 1;
         } else {
@@ -110,11 +110,11 @@ exports.finishedProcess = async function (req, res) {
     const urlSetReplicas = `${process.env.BACKEND_URL}/projects/${projectId}/setReplicas`;
 
         let jsonString = Fs.readFileSync(jsonPath, 'utf8');
-        let actionsReceive = JSON.parse(jsonString);
+        let actionsReceive = jsonString;
 
         console.log(actionsReceive);
         // Generate all the action with the start step and the number step
-        let jsonToSend = parseAndGenerateJson(actionsReceive);
+        let jsonToSend = parseAndGenerateJson(JSON.parse(actionsReceive));
         
 
         // Add Step to TimeStamp
@@ -143,7 +143,7 @@ exports.finishedProcess = async function (req, res) {
         });
         console.log(`Sending a post to setReplicas with infos:\n projectId: ${projectId}\nuserId: ${userId}\nactionsJson:`);
         let script = (JSON.parse(jsonString).script);
-        console.log(script);
+        console.log(jsonString);
         await axios.post(urlSetReplicas, {
             userId: userId,
             actionsJson: jsonString,
