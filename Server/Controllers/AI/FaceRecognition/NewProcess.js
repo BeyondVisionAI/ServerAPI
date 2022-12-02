@@ -45,15 +45,15 @@ exports.newProcess = async function (req, res) {
                 jsonImage["images"][i]["path"] = imageObj.filePath;
             }
         }
-        const pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Argument-${req.body.projectId}.json`;
+        const pathToJsonImage = `${process.env.FILES_DIRECTORY}/Json/Argument-${req.body.projectId}.json`;
 
         let jsonString = JSON.stringify(jsonImage);
         Fs.writeFileSync(pathToJsonImage, jsonString);
 
         // TODO enlevé avant de passé sur la dev et sur la main / pour test
         // let jsonString = "";
-        // let pathToVideo = `${process.env.FILES_DIRECTORY}Videos/Test1.mp4`;
-        // let pathToJsonImage = `${process.env.FILES_DIRECTORY}Json/Test1.json`;
+        // let pathToVideo = `${process.env.FILES_DIRECTORY}/Videos/Test1.mp4`;
+        // let pathToJsonImage = `${process.env.FILES_DIRECTORY}/Json/Test1.json`;
 
         const command = `python3 ${process.env.AI_FACE_RECOGNITION_DIRECTORY}Face_Recognition_Finale.py -VP ${pathToVideo} -JI ${pathToJsonImage} -ID ${req.body.projectId}`
         await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'FaceRecognition' });
