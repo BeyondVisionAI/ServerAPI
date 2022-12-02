@@ -68,10 +68,13 @@ exports.textToSpeech = async function (req, res) {
         if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
             throw Errors.BAD_REQUEST_MISSING_INFOS;
         }
+        const index = voices.findIndex(voice => voice.id == voiceId);
+        if (!index)
+            throw Errors.BAD_REQUEST_BAD_INFOS
         let paramsToSend = {
             'Text': req.body.text,
             'OutputFormat': "mp3",
-            'VoiceId': voices[req.body.voiceId].nameID
+            'VoiceId': voices[index].nameID
 
         }
         let args = {
