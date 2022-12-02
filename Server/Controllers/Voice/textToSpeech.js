@@ -68,7 +68,6 @@ exports.textToSpeech = async function (req, res) {
         if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
             throw Errors.BAD_REQUEST_MISSING_INFOS;
         }
-        console.log(voices);
         const index = voices.findIndex(voice => voice.id == req.body.voiceId);
         if (!index)
             throw Errors.BAD_REQUEST_BAD_INFOS
