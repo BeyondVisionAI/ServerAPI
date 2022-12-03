@@ -68,10 +68,13 @@ exports.textToSpeech = async function (req, res) {
         if (!req.body.projectId || !req.body.voiceId || !req.body.text || !req.body.replicaId) {
             throw Errors.BAD_REQUEST_MISSING_INFOS;
         }
+        const index = voices.findIndex(voice => voice.id == req.body.voiceId);
+        if (index === -1)
+            throw Errors.BAD_REQUEST_BAD_INFOS
         let paramsToSend = {
             'Text': req.body.text,
             'OutputFormat': "mp3",
-            'VoiceId': voices[req.body.voiceId].nameID
+            'VoiceId': voices[index].nameID
 
         }
         let args = {
@@ -79,12 +82,12 @@ exports.textToSpeech = async function (req, res) {
             projectId: req.body.projectId,
             file: `${process.env.FILES_DIRECTORY}/Audios/${req.body.replicaId}.mp3`
         }
-        await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
+       await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
         let returnValue = await PollyPromise(paramsToSend, args);
         if (returnValue.description === 'Success') {
-            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
+           await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
         } else {
-            await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
+           await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
             throw returnValue;
         }
         returnMessage = { description: "You successfully TextToSpeech", audioDuration: returnValue.audioDuration }

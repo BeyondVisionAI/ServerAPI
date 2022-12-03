@@ -18,6 +18,7 @@ from mmaction.datasets.pipelines import Compose
 
 #CUSTOM IMPORTS
 import requests
+#import time
 
 FONTFACE = cv2.FONT_HERSHEY_COMPLEX_SMALL
 FONTSCALE = 1
@@ -39,6 +40,7 @@ def parse_args():
     parser.add_argument('label', help='label file')
     parser.add_argument('out_file', help='output result file in video/json')
     parser.add_argument('projectId', help='Id of the project')
+    parser.add_argument('userId', help='Id of the user that created the project')
     parser.add_argument(
         '--input-step',
         type=int,
@@ -145,6 +147,7 @@ def show_results(model, data, label, args):
     msg = 'Preparing action recognition ...'
     text_info = {}
     out_json = {}
+
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     frame_size = (frame_width, frame_height)
 
@@ -209,14 +212,15 @@ def show_results(model, data, label, args):
             res = dict(list({'fps' : fps}.items()) + list(out_json.items()))
             #print(res.dump())
             json.dump(textinfo, js)
+            #json.dump(out_json, js)
             payload_raw = {
                 "jsonPath": args.out_file,
+                "userId": args.userId,
                 "projectId": args.projectId
             }
-            payload_js = json.dumps(payload_raw)
-            x = requests.post('http://localhost:8082/AI/Action/FinishedProcess', json=payload_raw);
-            print(x.text)
-           # json.dump(out_json, js)
+        #time.sleep(10)
+        x = requests.post('http://localhost:8082/AI/Action/FinishedProcess', json=payload_raw);
+        print(x.text)
 
 
 def inference(model, data, args, frame_queue):

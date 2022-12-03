@@ -26,20 +26,14 @@ exports.generationAudio = async function (req, res) {
     let returnMessage = "You successfully generate the audio";
     let returnStatus = "Done";
     try {
-        console.log(0)
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
-        console.log(1)
         updatedAudioInfo = await getfiles(req.body.projectId, req.body.audioInfo);
-        console.log(2)
         roadGen = await genBlanks(updatedAudioInfo);
-        console.log(3)
         ad_file = await concatAudios(roadGen, `${process.env.FILES_DIRECTORY}/Audios/${req.body.projectId}-out.mp3`);
-        console.log(4)
         if (!ad_file || !fs.existsSync(ad_file))
             throw('Could not generate the audiodescription file')
-        console.log(5)
         aws_resp = await uploadFile(`${process.env.S3_BUCKET_FINISHED_PRODUCT_AWS}`, `Audio/${req.body.projectId}.mp3`, {saved: true, filePath: ad_file})
-        console.log(aws_resp)
+        console.log("res = ", aws_resp);
     } catch (e) {
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
