@@ -35,7 +35,7 @@ exports.generationVideo = async function (req, res) {
         console.log("videoObj :", videoObj)
         console.log("audioObj :", audioObj)
         let outputPath = `${process.env.FILES_DIRECTORY}/Videos/${uid(10)}.mp4`
-        let command = `ffmpeg -i ${videoObj.filePath} -i ${audioObj.filePath} -map 0:v -map 1:a -c:v copy -c:a copy ${outputPath}`;
+        let command = `ffmpeg -i ${videoObj.filePath} -i ${audioObj.filePath} -filter_complex "[0:a][1:a]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2 -shortest ${outputPath}`;
         console.log("command:", command)
         const result = await exec(command)
         // if (result.stderr !== null && result.stderr !== undefined) {

@@ -33,10 +33,8 @@ exports.downloadFile = async function (bucketName, keyName, saveIt = false, obje
                 Key: keyName
             }, (err, data) => {
                 if (err) {
-                    console.log("B")
                     reject ({code: 84, err: err})
                 }
-                console.log("A")
                resolve({code: 0, data: data.Body})
             });
         });
@@ -60,7 +58,6 @@ exports.downloadFile = async function (bucketName, keyName, saveIt = false, obje
                     filePath = `${process.env.FILES_DIRECTORY}/${fileId}.${temp[temp.length -1]}`;
                     break;
             }
-            console.log(result);
             await (Fs.writeFile(filePath, result.data, "binary", function (err) {
                 if (err) {
                     console.log('Error FS', Errors.ERROR_S3_DOWNLOAD);
