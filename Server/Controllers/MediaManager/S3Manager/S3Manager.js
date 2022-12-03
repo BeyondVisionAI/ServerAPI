@@ -23,18 +23,19 @@ exports.downloadFile = async function (bucketName, keyName, saveIt = false, type
             let temp = keyName.split('.');
             const fileId = uid(10);
             let filePath = "";
+            console.log(temp)
             switch (type) {
                 case "Video":
-                    filePath = process.env.FILES_DIRECTORY + '/Videos/' + fileId + temp[temp.Lenght()];
+                    filePath = process.env.FILES_DIRECTORY + '/Videos/' + fileId + '.' + temp[temp.length -1];
                     break;
                 case "Audio":
-                    filePath = process.env.FILES_DIRECTORY + '/Audios/' + fileId + temp[temp.Lenght()];
+                    filePath = process.env.FILES_DIRECTORY + '/Audios/' + fileId + '.' + temp[temp.length -1];
                     break;
                 case "Image":
-                    filePath = process.env.FILES_DIRECTORY + '/Images/' + fileId + temp[temp.Lenght()];
+                    filePath = process.env.FILES_DIRECTORY + '/Images/' + fileId + '.' + temp[temp.length -1];
                     break;
                 default:
-                    filePath = process.env.FILES_DIRECTORY + '/' + fileId + temp[temp.Lenght()];
+                    filePath = process.env.FILES_DIRECTORY + '/' + fileId + '.' + temp[temp.length -1];
                     break;
             }
             await (Fs.writeFile(filePath, data, "binary", function (err) {
@@ -74,13 +75,16 @@ exports.uploadFile = async function (bucketName, keyName, params) {
         return (await s3.upload(paramsToSend, function (err, data) {
             if (err) {
                 console.log('Error S3', Errors.ERROR_S3_UPLOAD);
+                console.log("ERROR, 84 (1)")
                 return ({ code: 84, err: Errors.ERROR_S3_UPLOAD });
             }
             console.log(`File uploaded successfully. ${data.Location}`);
+            console.log("OK, 0")
             return ({ code: 0 })
         }));
     } catch (err) {
         console.log('Error catch', err);
+        console.log("ERROR, 84 (2)")
         return ({ code: 84, err: err });
     }
 };
@@ -133,3 +137,4 @@ exports.deleteFile = async function (bucketName, keyname) {
         return ({ code: 84, err: err });
     }
 }
+
