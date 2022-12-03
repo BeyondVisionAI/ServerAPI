@@ -81,7 +81,7 @@ exports.uploadFile = async function (bucketName, keyName, params) {
     try {
         let data
         if (params.saved) {
-            data = await Fs.promises.readFile(params.filepath);
+            data = await Fs.promises.readFile(params.filePath);
         } else if (params.data) {
             data = params.data
         } else {

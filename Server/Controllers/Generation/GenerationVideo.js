@@ -42,7 +42,7 @@ exports.generationVideo = async function (req, res) {
         //     throw ( { code: 84, err: result.stderr});
         // }
         console.log("result :", result);
-        let uploadStatus = await uploadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Video/${req.body.projectId}.mp4`, { saved: true, filepath: outputPath })
+        let uploadStatus = await uploadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Video/${req.body.projectId}.mp4`, { saved: true, filePath: outputPath })
         if (uploadStatus.code === 84) {
             returnCode = 400;
             returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
