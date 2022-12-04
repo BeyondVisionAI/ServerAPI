@@ -24,7 +24,6 @@ function parseAndGenerateJson(actionsReceive) {
     actionsToSend['fps'] = 0;
 
     for (let key in actionsReceive) {
-       // console.log(key);
         if (actionsToSend.script !== undefined) {
             actionsToSend.script.Lenght - 1;
         } else {
@@ -142,8 +141,6 @@ exports.finishedProcess = async function (req, res) {
             stepType: 'ActionRetrieve',
         });
         console.log(`Sending a post to setReplicas with infos:\n projectId: ${projectId}\nuserId: ${userId}\nactionsJson:`);
-        let script = (JSON.parse(jsonString).script);
-        console.log(jsonString);
         await axios.post(urlSetReplicas, {
             userId: userId,
             actionsJson: jsonString,
