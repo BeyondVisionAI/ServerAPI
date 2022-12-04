@@ -21,7 +21,7 @@ AWS.config.update({
 
 app.use(
     cors({
-      origin: ['http://localhost:8080', 'http://localhost'],
+      origin: [process.env.BACKEND_URL, process.env.FRONTEND_URL],
       credentials: true,
       optionsSuccessStatus: 200
     })

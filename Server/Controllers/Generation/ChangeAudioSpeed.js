@@ -1,6 +1,7 @@
 const { downloadFile, uploadFile } = require('../MediaManager/S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
+var { exec } = require('child_process');
 
 /**
  * Change the speed of an audio file  and upload it back to AWS.
