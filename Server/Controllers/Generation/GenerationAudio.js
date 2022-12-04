@@ -28,7 +28,9 @@ exports.generationAudio = async function (req, res) {
     let returnStatus = "Done";
     try {
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
-        updatedAudioInfo = await getfiles(req.body.projectId, req.body.audioInfo);
+        audioInfo = await sortInput(req.body.audioInfo);
+        console.log(audioInfo)
+        updatedAudioInfo = await getfiles(req.body.projectId, audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
         if (!ad_file || !fs.existsSync(ad_file))
@@ -37,8 +39,6 @@ exports.generationAudio = async function (req, res) {
         roadGen.push(ad_file)
         clearFiles(roadGen)
     } catch (e) {
-        console.log(e)
-        clearFolder(audio_dest)
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
         returnStatus = 'Error';
@@ -141,4 +141,16 @@ function clearFiles(files) {
             })
         }
     }
+}
+
+async function sortInput(audioInfo) {
+    await audioInfo.sort((a, b) => {
+        if (a.timeStamp > b.timeStamp)
+            return(1);
+        else if (a.timeStamp < b.timeStamp)
+            return(-1);
+        else
+            return(0);
+    })
+    return(audioInfo);
 }

@@ -1,7 +1,10 @@
-const { useSignedUrlDownload, useSignedUrlUpload } = require('../MediaManager/MediaManager');
+// const { useSignedUrlDownload, useSignedUrlUpload } = require('../MediaManager/MediaManager');
+const { downloadFile, uploadFile } = require('../MediaManager/S3Manager/S3Manager');
 const { uid } = require('uid');
 const { Errors } = require("../../datas/Errors.js");
 const axios = require('axios');
+const util = require('node:util');
+const exec = util.promisify(require('child_process').exec);
 /**
  * Fusion the source Video and the "Final audio" to create the "Final video"
  * @param { Request } req { body: { projectId } }
@@ -15,48 +18,33 @@ exports.generationVideo = async function (req, res) {
     const urlSetStatus = `https://localhost/projects/${req.body.projectId}/setStatus`;
     let returnCode = 200;
     let returnMessage = "You successfully generate the video";
-    let returnStatus = "Done";
     try {
-        if (!req.body.projectId || !req.body.signedUrlVideoSource || !req.body.signedUrlFinishedAudio)
+        if (!req.body.projectId)
             throw new Errors.BAD_REQUEST_MISSING_INFOS;
-        await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'VideoGeneration' });
+       await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'VideoGeneration' });
 
         let s3FilePathRawVideo = `${req.body.projectId}.mp4`
         let s3FilePathAudio = `Audio/${req.body.projectId}.mp3`
         let s3FilePathFinalVideo = `Video/${req.body.projectId}.mp4`
 
-        let videoObj = useSignedUrlDownload(req.body.signedUrlVideoSource, 'Video');
-        let audioObj = useSignedUrlDownload(req.body.signedUrlFinishedAudio);
+        let videoObj = await downloadFile(process.env.S3_BUCKET_RAW_VIDEO_AWS, `${req.body.projectId}.mp4`, true, "Video");
+        let audioObj = await downloadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Audio/${req.body.projectId}.mp3`, true, "Audio");
 
-        let outputPath = process.env.FILE_PATH + uid(10) + '.mp4'
-        let code = await exec(`ffmpeg.exe -i ${videoObj.filePath} -i ${audioObj.filePath} -c copy ${outputPath}`,
-            function (error, stdout, stderr) {
-                console.log('stdout: ' + stdout);
-                console.log('stderr: ' + stderr);
-                if (error !== null) {
-                    console.log('exec error: ' + error);
-                    return (84);
-                }
-                console.log('Finish !')
-                return (0);
-            }
-        );
-        if (code === 84) {
+        let outputPath = `${process.env.FILES_DIRECTORY}/Videos/${uid(10)}.mp4`
+        let command = `ffmpeg -i ${videoObj.filePath} -i ${audioObj.filePath} -filter_complex "[0:a][1:a]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2 -shortest ${outputPath}`;
+        const result = await exec(command)
+        let uploadStatus = await uploadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Video/${req.body.projectId}.mp4`, { saved: true, filePath: outputPath })
+        if (uploadStatus.code === 84) {
             returnCode = 400;
             returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
             returnStatus = 'Error';
-        } else {
-            let uploadStatus = useSignedUrlUpload( { saved: true, filePath: outputPath })
-            if (uploadStatus.code === 84) {
-                returnCode = 400;
-                returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
-                returnStatus = 'Error';
-            }
+            console.log("Error :", uploadStatus)
         }
     } catch (e) {
+        console.log("Error :", e);
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
-        returnStatus = 'Error';
+        returnStatus = 'Error'
     }
     const temp = res.status(returnCode).send(returnMessage);
     await axios.post(urlSetStatus, { statusType: returnStatus, stepType: 'VideoGeneration' });
