@@ -34,7 +34,7 @@ exports.generationAudio = async function (req, res) {
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
         if (!ad_file || !fs.existsSync(ad_file))
-            throw('Could not generate the audiodescription file')
+            throw(new Error('Could not generate the audiodescription file'));
         aws_resp = await uploadFile(`${process.env.S3_BUCKET_FINISHED_PRODUCT_AWS}`, `Audio/${req.body.projectId}.mp3`, {saved: true, filePath: ad_file})
         roadGen.push(ad_file)
         clearFiles(roadGen)
@@ -55,7 +55,7 @@ async function getfiles(projectId, audioInfo) {
     try {
         for (let audio of audioInfo) {
             if (audio.id == undefined || audio.timeStamp == undefined || audio.duration == undefined)
-                throw("invalid object");
+                throw(new Error("invalid object"));
             var keyName = `${projectId}/${audio.id}.mp3`;
             let dl = await downloadFile(process.env.S3_BUCKET_AUDIOS_AWS, keyName, true, `Audio`);
             let updatedAudio = {
@@ -67,7 +67,7 @@ async function getfiles(projectId, audioInfo) {
             updatedAudioInfo.push(updatedAudio);
         }
     } catch (error) {
-        throw("Could not get the files from S3")
+        throw(new Error("Could not get the files from S3"))
     }
     return (updatedAudioInfo)
 }
@@ -80,7 +80,7 @@ async function genBlanks(updatedAudioInfo) {
             if (prevEnd < audio.timeStamp) {
                 blank = await genBlankAudio(audio.timeStamp - prevEnd, audio)
                 if (!blank)
-                    throw("Error while generating blank audio, it might be a problem with ffmpeg.")
+                    throw(new Error("Error while generating blank audio, it might be a problem with ffmpeg."))
                 roadGen.push(blank)
             }
             if (audio.filePath != null)
@@ -88,7 +88,7 @@ async function genBlanks(updatedAudioInfo) {
             prevEnd = getEnd(audio);
         }
     } catch (error) {
-        throw("Could not generate the blanks audio files")
+        throw(new Error("Could not generate the blanks audio files"))
     }
     return (roadGen)
 }
@@ -100,7 +100,7 @@ async function genBlankAudio(time, audioObj) {
         const {error, stdout, stderr} = await exec(`ffmpeg.exe -f lavfi -i anullsrc=r=22050:cl=mono -t ${time} -id3v2_version 3 ${dest}`)
 
         if (error)
-            throw('error')
+            throw(new Error(error))
         return (dest_out)
     } catch (error) {
         console.error('ERROR: ' + error)
@@ -121,7 +121,7 @@ async function concatAudios(roadGen, dest_out) {
 
         if (error) {
             console.log(error)
-            throw('Could not generate the audiodescription audio')
+            throw(new Error('Could not generate the audiodescription audio'))
         }
         return (dest_out)
     } catch (err) {
