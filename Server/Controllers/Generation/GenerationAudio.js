@@ -3,7 +3,7 @@ const { Errors } = require("../../datas/Errors.js");
 const axios = require('axios');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const path = require('path')
+const path = require('path');
 
 const fs = require("fs");
 
