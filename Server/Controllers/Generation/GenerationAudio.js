@@ -29,12 +29,14 @@ exports.generationAudio = async function (req, res) {
     try {
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
         audioInfo = await sortInput(req.body.audioInfo);
-        updatedAudioInfo = await getFiles(req.body.projectId, audioInfo);
+        updatedAudioInfo = await getfiles(req.body.projectId, audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
         if (!ad_file || !fs.existsSync(ad_file))
             throw(new Error('Could not generate the audiodescription file'));
         aws_resp = await uploadFile(`${process.env.S3_BUCKET_FINISHED_PRODUCT_AWS}`, `Audio/${req.body.projectId}.mp3`, {saved: true, filePath: ad_file})
+        if (aws_resp.err)
+            throw(new Error(aws_resp.err));
         roadGen.push(ad_file)
         clearFiles(roadGen)
     } catch (e) {
@@ -49,7 +51,7 @@ exports.generationAudio = async function (req, res) {
 
 const getEnd = (audio) => audio.timeStamp + audio.duration;
 
-async function getFiles(projectId, audioInfo) {
+async function getfiles(projectId, audioInfo) {
     var updatedAudioInfo = []
     try {
         for (let audio of audioInfo) {
@@ -94,7 +96,8 @@ async function genBlanks(updatedAudioInfo) {
 
 async function genBlankAudio(time, audioObj) {
     try {
-        dest = `${__dirname}${path.sep}..${path.sep}..${path.sep}..${path.sep}Files${path.sep}Audios${path.sep}blank-${audioObj.id}.mp3` // ffmpeg don't handle non aboslute path, generation of the path to file with os separators
+
+        dest = `${process.cwd()}/${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3` // ffmpeg don't handle non aboslute path, generation of the path to file with os separators
         dest_out = `${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3`
         const {error, stdout, stderr} = await exec(`ffmpeg.exe -f lavfi -i anullsrc=r=22050:cl=mono -t ${time} -id3v2_version 3 ${dest}`)
 
