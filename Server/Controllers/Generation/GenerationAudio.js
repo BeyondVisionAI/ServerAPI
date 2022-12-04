@@ -11,7 +11,7 @@ const fs = require("fs");
 //TODO Remplir le header quand sera fait
 /**
  * Concat all the Audios files of a project to create the "Final audio"
- * @param { Request } req { body: {  } }
+ * @param { Request } req { body: { projectId: string,  audioInfo: List[id: string, timeStamp: float, duration: float]} }
  * @param { Response } res
  * @returns { response to send }
  */
@@ -21,6 +21,7 @@ exports.generationAudio = async function (req, res) {
     if (!req.body.projectId || !req.body.audioInfo)
         return (res.status(400).send(Errors.BAD_REQUEST_MISSING_INFOS));
     console.log('Generation Audio');
+    const audio_dest = `${process.env.FILES_DIRECTORY}/Audios/${req.body.projectId}`
     const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
     let returnCode = 200;
     let returnMessage = "You successfully generate the audio";
@@ -29,12 +30,15 @@ exports.generationAudio = async function (req, res) {
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
         updatedAudioInfo = await getfiles(req.body.projectId, req.body.audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
-        ad_file = await concatAudios(roadGen, `${process.env.FILES_DIRECTORY}/Audios/${req.body.projectId}-out.mp3`);
+        ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
         if (!ad_file || !fs.existsSync(ad_file))
             throw('Could not generate the audiodescription file')
         aws_resp = await uploadFile(`${process.env.S3_BUCKET_FINISHED_PRODUCT_AWS}`, `Audio/${req.body.projectId}.mp3`, {saved: true, filePath: ad_file})
-        console.log("res = ", aws_resp);
+        roadGen.push(ad_file)
+        clearFiles(roadGen)
     } catch (e) {
+        console.log(e)
+        clearFolder(audio_dest)
         returnCode = 400;
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
         returnStatus = 'Error';
@@ -53,7 +57,7 @@ async function getfiles(projectId, audioInfo) {
             if (audio.id == undefined || audio.timeStamp == undefined || audio.duration == undefined)
                 throw("invalid object");
             var keyName = `${projectId}/${audio.id}.mp3`;
-            let dl = await downloadFile(process.env.S3_BUCKET_AUDIOS_AWS, keyName, true, 'Audio');
+            let dl = await downloadFile(process.env.S3_BUCKET_AUDIOS_AWS, keyName, true, `Audio`);
             let updatedAudio = {
                 filePath: dl.filePath,
                 id: dl.fileId,
@@ -123,5 +127,18 @@ async function concatAudios(roadGen, dest_out) {
     } catch (err) {
         console.log(err)
         return (null)
+    }
+}
+
+function clearFiles(files) {
+    for (let file of files) {
+        if (fs.existsSync(file)) {
+            fs.unlinkSync(file, (err) => {
+                if (err) {
+                    console.error(err)
+                    return
+                }
+            })
+        }
     }
 }
