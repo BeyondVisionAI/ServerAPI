@@ -54,7 +54,7 @@ async function getFiles(projectId, audioInfo) {
     try {
         for (let audio of audioInfo) {
             if (audio.id == undefined || audio.timeStamp == undefined || audio.duration == undefined)
-                throw("invalid object");
+                throw(new Error("Invalid object"));
             var keyName = `${projectId}/${audio.id}.mp3`;
             let dl = await downloadFile(process.env.S3_BUCKET_AUDIOS_AWS, keyName, true, `Audio`);
             let updatedAudio = {
