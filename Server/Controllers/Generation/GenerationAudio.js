@@ -29,7 +29,6 @@ exports.generationAudio = async function (req, res) {
     try {
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
         audioInfo = await sortInput(req.body.audioInfo);
-        console.log(audioInfo)
         updatedAudioInfo = await getfiles(req.body.projectId, audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
