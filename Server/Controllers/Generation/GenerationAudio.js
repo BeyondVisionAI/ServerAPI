@@ -49,7 +49,7 @@ exports.generationAudio = async function (req, res) {
 
 const getEnd = (audio) => audio.timeStamp + audio.duration;
 
-async function getfiles(projectId, audioInfo) {
+async function getFiles(projectId, audioInfo) {
     var updatedAudioInfo = []
     try {
         for (let audio of audioInfo) {
