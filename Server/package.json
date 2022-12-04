@@ -28,7 +28,6 @@
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "fs": "^0.0.1-security",
-    "node": "^19.1.0",
     "node-gyp": "^8.4.1",
     "uid": "^2.0.0"
   }
