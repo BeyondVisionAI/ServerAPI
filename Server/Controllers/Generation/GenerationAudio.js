@@ -3,7 +3,7 @@ const { Errors } = require("../../datas/Errors.js");
 const axios = require('axios');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const path = require('path')
+const path = require('path');
 
 const fs = require("fs");
 
@@ -29,8 +29,7 @@ exports.generationAudio = async function (req, res) {
     try {
         await axios.post(urlSetStatus, { statusType: 'InProgress', stepType: 'AudioGeneration' });
         audioInfo = await sortInput(req.body.audioInfo);
-        console.log(audioInfo)
-        updatedAudioInfo = await getfiles(req.body.projectId, audioInfo);
+        updatedAudioInfo = await getFiles(req.body.projectId, audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
         if (!ad_file || !fs.existsSync(ad_file))
@@ -50,12 +49,12 @@ exports.generationAudio = async function (req, res) {
 
 const getEnd = (audio) => audio.timeStamp + audio.duration;
 
-async function getfiles(projectId, audioInfo) {
+async function getFiles(projectId, audioInfo) {
     var updatedAudioInfo = []
     try {
         for (let audio of audioInfo) {
             if (audio.id == undefined || audio.timeStamp == undefined || audio.duration == undefined)
-                throw(new Error("invalid object"));
+                throw(new Error("Invalid object"));
             var keyName = `${projectId}/${audio.id}.mp3`;
             let dl = await downloadFile(process.env.S3_BUCKET_AUDIOS_AWS, keyName, true, `Audio`);
             let updatedAudio = {
