@@ -160,3 +160,4 @@ exports.deleteFile = async function (bucketName, keyname) {
         return ({ code: 84, err: err });
     }
 }
+
