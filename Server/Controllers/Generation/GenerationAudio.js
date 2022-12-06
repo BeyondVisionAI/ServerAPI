@@ -44,8 +44,8 @@ exports.generationAudio = async function (req, res) {
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
         returnStatus = 'Error';
     }
-    const temp = res.status(returnCode).send(returnMessage);
     await axios.post(urlSetStatus, { statusType: returnStatus, stepType: 'AudioGeneration' });
+    const temp = res.status(returnCode).send(returnMessage);
     return (temp);
 }
 
@@ -99,7 +99,7 @@ async function genBlankAudio(time, audioObj) {
 
         dest = `${process.cwd()}/${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3` // ffmpeg don't handle non aboslute path, generation of the path to file with os separators
         dest_out = `${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3`
-        const {error, stdout, stderr} = await exec(`ffmpeg.exe -f lavfi -i anullsrc=r=22050:cl=mono -t ${time} -id3v2_version 3 ${dest}`)
+        const {error, stdout, stderr} = await exec(`${process.env.FFMPEG_CMD} -f lavfi -i anullsrc=r=22050:cl=mono -t ${time} -id3v2_version 3 ${dest}`)
 
         if (error)
             throw(new Error(error))
@@ -119,7 +119,7 @@ async function concatAudios(roadGen, dest_out) {
         }
         files = files.slice(0, -1)
 
-        const {error, stdout, stderr} = await exec(`ffmpeg -i "concat:${files}" -acodec copy ${process.cwd()}/${dest_out}`)
+        const {error, stdout, stderr} = await exec(`${process.env.FFMPEG_CMD} -i "concat:${files}" -acodec copy ${process.cwd()}/${dest_out}`)
 
         if (error) {
             console.log(error)

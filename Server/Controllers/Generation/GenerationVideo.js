@@ -15,7 +15,7 @@ const exec = util.promisify(require('child_process').exec);
 exports.generationVideo = async function (req, res) {
     console.log("Generating a Final Video...");
     console.log('Generation Video');
-    const urlSetStatus = `https://localhost/projects/${req.body.projectId}/setStatus`;
+    const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
     let returnCode = 200;
     let returnMessage = "You successfully generate the video";
     try {
@@ -31,7 +31,7 @@ exports.generationVideo = async function (req, res) {
         let audioObj = await downloadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Audio/${req.body.projectId}.mp3`, true, "Audio");
 
         let outputPath = `${process.env.FILES_DIRECTORY}/Videos/${uid(10)}.mp4`
-        let command = `ffmpeg -i ${videoObj.filePath} -i ${audioObj.filePath} -filter_complex "[0:a][1:a]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2 -shortest ${outputPath}`;
+        let command = `${process.env.FFMPEG_CMD} -i ${videoObj.filePath} -i ${audioObj.filePath} -filter_complex "[0:a][1:a]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2 -shortest ${outputPath}`;
         const result = await exec(command)
         let uploadStatus = await uploadFile(process.env.S3_BUCKET_FINISHED_PRODUCT_AWS, `Video/${req.body.projectId}.mp4`, { saved: true, filePath: outputPath })
         if (uploadStatus.code === 84) {
@@ -46,7 +46,7 @@ exports.generationVideo = async function (req, res) {
         returnMessage = Errors.BAD_REQUEST_BAD_INFOS;
         returnStatus = 'Error'
     }
-    const temp = res.status(returnCode).send(returnMessage);
     await axios.post(urlSetStatus, { statusType: returnStatus, stepType: 'VideoGeneration' });
+    const temp = res.status(returnCode).send(returnMessage);
     return (temp);
 }
