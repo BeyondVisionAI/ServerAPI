@@ -18,6 +18,7 @@ exports.generationVideo = async function (req, res) {
     const urlSetStatus = `${process.env.BACKEND_URL}/projects/${req.body.projectId}/setStatus`;
     let returnCode = 200;
     let returnMessage = "You successfully generate the video";
+    let returnStatus = "Done";
     try {
         if (!req.body.projectId)
             throw new Errors.BAD_REQUEST_MISSING_INFOS;
