@@ -31,7 +31,7 @@ exports.changeAudioSpeed = async function (req, res) {
         let tempo = (req.body.newDuration / actualDuration);
         tempo = tempo.toString();
         let outputPath = process.env.FILE_PATH + uid(10) + '.mp4'
-        let code = await exec(`ffmpeg.exe -i ${audioObj.filePath} -filter:a "atempo=${tempo}" -vn ${outputPath}`,
+        let code = await exec(`ffmpeg -i ${audioObj.filePath} -filter:a "atempo=${tempo}" -vn ${outputPath}`,
             function (error, stdout, stderr) {
                 console.log('stdout: ' + stdout);
                 console.log('stderr: ' + stderr);

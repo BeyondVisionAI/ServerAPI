@@ -8,7 +8,7 @@ var { exec } = require('child_process');
     var video = '.\\Test\\Test1.mp4'
     var audio = '.\\Test\\Test1.mp3'
     var output = 'output.mp4'
-    await exec(`ffmpeg.exe -i ${video} -i ${audio} -c copy ${output}`,
+    await exec(`ffmpeg -i ${video} -i ${audio} -c copy ${output}`,
         function (error, stdout, stderr) {
             console.log('stdout: ' + stdout);
             console.log('stderr: ' + stderr);

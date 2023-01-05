@@ -98,7 +98,7 @@ async function genBlanks(updatedAudioInfo) {
 async function genBlankAudio(time, audioObj) {
     try {
 
-        dest = `${process.cwd()}/${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3` // ffmpeg don't handle non aboslute path, generation of the path to file with os separators
+        dest = `${process.cwd()}/${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3`
         dest_out = `${process.env.FILES_DIRECTORY}/Audios/blank-${audioObj.id}.mp3`
         const {error, stdout, stderr} = await exec(`${process.env.FFMPEG_CMD} -f lavfi -i anullsrc=r=22050:cl=mono -t ${time} -id3v2_version 3 ${dest}`)
 
