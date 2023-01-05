@@ -18,7 +18,7 @@ const fs = require("fs");
 
 exports.generationAudio = async function (req, res) {
     console.log("Generating a Final Audio...");
-    if (!req.body.projectId || !req.body.audioInfo)
+    if (!req.body.projectId || !req.body.audioInfo || req.body.audioInfo.length == 0)
         return (res.status(400).send(Errors.BAD_REQUEST_MISSING_INFOS));
     console.log('Generation Audio');
     const audio_dest = `${process.env.FILES_DIRECTORY}/Audios/${req.body.projectId}`
@@ -32,6 +32,7 @@ exports.generationAudio = async function (req, res) {
         updatedAudioInfo = await getfiles(req.body.projectId, audioInfo);
         roadGen = await genBlanks(updatedAudioInfo);
         ad_file = await concatAudios(roadGen, `${audio_dest}-out.mp3`);
+        console.log(ad_file)
         if (!ad_file || !fs.existsSync(ad_file))
             throw(new Error('Could not generate the audiodescription file'));
         aws_resp = await uploadFile(`${process.env.S3_BUCKET_FINISHED_PRODUCT_AWS}`, `Audio/${req.body.projectId}.mp3`, {saved: true, filePath: ad_file})
@@ -119,6 +120,7 @@ async function concatAudios(roadGen, dest_out) {
         }
         files = files.slice(0, -1)
 
+        console.log(`${process.env.FFMPEG_CMD} -i "concat:${files}" -acodec copy ${process.cwd()}/${dest_out}`)
         const {error, stdout, stderr} = await exec(`${process.env.FFMPEG_CMD} -i "concat:${files}" -acodec copy ${process.cwd()}/${dest_out}`)
 
         if (error) {
