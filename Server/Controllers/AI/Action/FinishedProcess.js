@@ -59,7 +59,7 @@ function parseAndGenerateJson(actionsReceive) {
                     // Same action recieved next to it
                     actionsToSend.script[lastItActionPush].nbIT += 1;
                 } else {
-                    if (percent >= 0) {
+                    if (percent >= 25) {
                         // New different action recieved
                         const realItStart = tempKey - itStart;
                         actionsToSend = addNewActionToJson(

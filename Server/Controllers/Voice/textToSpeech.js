@@ -82,12 +82,12 @@ exports.textToSpeech = async function (req, res) {
             projectId: req.body.projectId,
             file: `${process.env.FILES_DIRECTORY}/Audios/${req.body.replicaId}.mp3`
         }
-       await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
+       //await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'InProgress', stepType: 'VoiceGeneration' });
         let returnValue = await PollyPromise(paramsToSend, args);
-        if (returnValue.description === 'Success') {
-           await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
-        } else {
-           await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
+        if (returnValue.description !== 'Success') {
+        //   await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Done', stepType: 'VoiceGeneration' });
+        //} else {
+        //   await axios.post(urlSetStatus, { projectId: req.body.projectId, statusType: 'Error', stepType: 'VoiceGeneration' });
             throw returnValue;
         }
         returnMessage = { description: "You successfully TextToSpeech", audioDuration: returnValue.audioDuration }
